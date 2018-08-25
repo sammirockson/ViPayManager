@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DDB2307221318DD800FE4F38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2307121318DD800FE4F38 /* AppDelegate.swift */; };
+		DDB2307421318DD800FE4F38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2307321318DD800FE4F38 /* ViewController.swift */; };
+		DDB2307721318DD800FE4F38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB2307521318DD800FE4F38 /* Main.storyboard */; };
+		DDB2307A21318DD800FE4F38 /* ViPayManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDB2307821318DD800FE4F38 /* ViPayManager.xcdatamodeld */; };
+		DDB2307C21318DDA00FE4F38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB2307B21318DDA00FE4F38 /* Assets.xcassets */; };
+		DDB2307F21318DDA00FE4F38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB2307D21318DDA00FE4F38 /* LaunchScreen.storyboard */; };
+		DDB2308A21318DDA00FE4F38 /* ViPayManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2308921318DDA00FE4F38 /* ViPayManagerTests.swift */; };
+		DDB2309521318DDA00FE4F38 /* ViPayManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2309421318DDA00FE4F38 /* ViPayManagerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DDB2308621318DDA00FE4F38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDB2306621318DD800FE4F38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDB2306D21318DD800FE4F38;
+			remoteInfo = ViPayManager;
+		};
+		DDB2309121318DDA00FE4F38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDB2306621318DD800FE4F38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDB2306D21318DD800FE4F38;
+			remoteInfo = ViPayManager;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DDB2306E21318DD800FE4F38 /* ViPayManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViPayManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDB2307121318DD800FE4F38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DDB2307321318DD800FE4F38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DDB2307621318DD800FE4F38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DDB2307921318DD800FE4F38 /* ViPayManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ViPayManager.xcdatamodel; sourceTree = "<group>"; };
+		DDB2307B21318DDA00FE4F38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DDB2307E21318DDA00FE4F38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DDB2308021318DDA00FE4F38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDB2308521318DDA00FE4F38 /* ViPayManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViPayManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDB2308921318DDA00FE4F38 /* ViPayManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViPayManagerTests.swift; sourceTree = "<group>"; };
+		DDB2308B21318DDA00FE4F38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDB2309021318DDA00FE4F38 /* ViPayManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViPayManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDB2309421318DDA00FE4F38 /* ViPayManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViPayManagerUITests.swift; sourceTree = "<group>"; };
+		DDB2309621318DDA00FE4F38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DDB2306B21318DD800FE4F38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDB2308221318DDA00FE4F38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDB2308D21318DDA00FE4F38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DDB2306521318DD800FE4F38 = {
+			isa = PBXGroup;
+			children = (
+				DDB2307021318DD800FE4F38 /* ViPayManager */,
+				DDB2308821318DDA00FE4F38 /* ViPayManagerTests */,
+				DDB2309321318DDA00FE4F38 /* ViPayManagerUITests */,
+				DDB2306F21318DD800FE4F38 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DDB2306F21318DD800FE4F38 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDB2306E21318DD800FE4F38 /* ViPayManager.app */,
+				DDB2308521318DDA00FE4F38 /* ViPayManagerTests.xctest */,
+				DDB2309021318DDA00FE4F38 /* ViPayManagerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DDB2307021318DD800FE4F38 /* ViPayManager */ = {
+			isa = PBXGroup;
+			children = (
+				DDB2307121318DD800FE4F38 /* AppDelegate.swift */,
+				DDB2307321318DD800FE4F38 /* ViewController.swift */,
+				DDB2307521318DD800FE4F38 /* Main.storyboard */,
+				DDB2307B21318DDA00FE4F38 /* Assets.xcassets */,
+				DDB2307D21318DDA00FE4F38 /* LaunchScreen.storyboard */,
+				DDB2308021318DDA00FE4F38 /* Info.plist */,
+				DDB2307821318DD800FE4F38 /* ViPayManager.xcdatamodeld */,
+			);
+			path = ViPayManager;
+			sourceTree = "<group>";
+		};
+		DDB2308821318DDA00FE4F38 /* ViPayManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				DDB2308921318DDA00FE4F38 /* ViPayManagerTests.swift */,
+				DDB2308B21318DDA00FE4F38 /* Info.plist */,
+			);
+			path = ViPayManagerTests;
+			sourceTree = "<group>";
+		};
+		DDB2309321318DDA00FE4F38 /* ViPayManagerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DDB2309421318DDA00FE4F38 /* ViPayManagerUITests.swift */,
+				DDB2309621318DDA00FE4F38 /* Info.plist */,
+			);
+			path = ViPayManagerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DDB2306D21318DD800FE4F38 /* ViPayManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDB2309921318DDA00FE4F38 /* Build configuration list for PBXNativeTarget "ViPayManager" */;
+			buildPhases = (
+				DDB2306A21318DD800FE4F38 /* Sources */,
+				DDB2306B21318DD800FE4F38 /* Frameworks */,
+				DDB2306C21318DD800FE4F38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ViPayManager;
+			productName = ViPayManager;
+			productReference = DDB2306E21318DD800FE4F38 /* ViPayManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DDB2308421318DDA00FE4F38 /* ViPayManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDB2309C21318DDA00FE4F38 /* Build configuration list for PBXNativeTarget "ViPayManagerTests" */;
+			buildPhases = (
+				DDB2308121318DDA00FE4F38 /* Sources */,
+				DDB2308221318DDA00FE4F38 /* Frameworks */,
+				DDB2308321318DDA00FE4F38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDB2308721318DDA00FE4F38 /* PBXTargetDependency */,
+			);
+			name = ViPayManagerTests;
+			productName = ViPayManagerTests;
+			productReference = DDB2308521318DDA00FE4F38 /* ViPayManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DDB2308F21318DDA00FE4F38 /* ViPayManagerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDB2309F21318DDA00FE4F38 /* Build configuration list for PBXNativeTarget "ViPayManagerUITests" */;
+			buildPhases = (
+				DDB2308C21318DDA00FE4F38 /* Sources */,
+				DDB2308D21318DDA00FE4F38 /* Frameworks */,
+				DDB2308E21318DDA00FE4F38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDB2309221318DDA00FE4F38 /* PBXTargetDependency */,
+			);
+			name = ViPayManagerUITests;
+			productName = ViPayManagerUITests;
+			productReference = DDB2309021318DDA00FE4F38 /* ViPayManagerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DDB2306621318DD800FE4F38 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = RockzAppStudio;
+				TargetAttributes = {
+					DDB2306D21318DD800FE4F38 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					DDB2308421318DDA00FE4F38 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = DDB2306D21318DD800FE4F38;
+					};
+					DDB2308F21318DDA00FE4F38 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = DDB2306D21318DD800FE4F38;
+					};
+				};
+			};
+			buildConfigurationList = DDB2306921318DD800FE4F38 /* Build configuration list for PBXProject "ViPayManager" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DDB2306521318DD800FE4F38;
+			productRefGroup = DDB2306F21318DD800FE4F38 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DDB2306D21318DD800FE4F38 /* ViPayManager */,
+				DDB2308421318DDA00FE4F38 /* ViPayManagerTests */,
+				DDB2308F21318DDA00FE4F38 /* ViPayManagerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DDB2306C21318DD800FE4F38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDB2307F21318DDA00FE4F38 /* LaunchScreen.storyboard in Resources */,
+				DDB2307C21318DDA00FE4F38 /* Assets.xcassets in Resources */,
+				DDB2307721318DD800FE4F38 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDB2308321318DDA00FE4F38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDB2308E21318DDA00FE4F38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DDB2306A21318DD800FE4F38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDB2307421318DD800FE4F38 /* ViewController.swift in Sources */,
+				DDB2307221318DD800FE4F38 /* AppDelegate.swift in Sources */,
+				DDB2307A21318DD800FE4F38 /* ViPayManager.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDB2308121318DDA00FE4F38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDB2308A21318DDA00FE4F38 /* ViPayManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDB2308C21318DDA00FE4F38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDB2309521318DDA00FE4F38 /* ViPayManagerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDB2308721318DDA00FE4F38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDB2306D21318DD800FE4F38 /* ViPayManager */;
+			targetProxy = DDB2308621318DDA00FE4F38 /* PBXContainerItemProxy */;
+		};
+		DDB2309221318DDA00FE4F38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDB2306D21318DD800FE4F38 /* ViPayManager */;
+			targetProxy = DDB2309121318DDA00FE4F38 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DDB2307521318DD800FE4F38 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDB2307621318DD800FE4F38 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DDB2307D21318DDA00FE4F38 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDB2307E21318DDA00FE4F38 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DDB2309721318DDA00FE4F38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DDB2309821318DDA00FE4F38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DDB2309A21318DDA00FE4F38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3V56TFD2QD;
+				INFOPLIST_FILE = ViPayManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.RockzAppStudio.ViPayManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DDB2309B21318DDA00FE4F38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3V56TFD2QD;
+				INFOPLIST_FILE = ViPayManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.RockzAppStudio.ViPayManager;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DDB2309D21318DDA00FE4F38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3V56TFD2QD;
+				INFOPLIST_FILE = ViPayManagerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.RockzAppStudio.ViPayManagerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ViPayManager.app/ViPayManager";
+			};
+			name = Debug;
+		};
+		DDB2309E21318DDA00FE4F38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3V56TFD2QD;
+				INFOPLIST_FILE = ViPayManagerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.RockzAppStudio.ViPayManagerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ViPayManager.app/ViPayManager";
+			};
+			name = Release;
+		};
+		DDB230A021318DDA00FE4F38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3V56TFD2QD;
+				INFOPLIST_FILE = ViPayManagerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.RockzAppStudio.ViPayManagerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ViPayManager;
+			};
+			name = Debug;
+		};
+		DDB230A121318DDA00FE4F38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3V56TFD2QD;
+				INFOPLIST_FILE = ViPayManagerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.RockzAppStudio.ViPayManagerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ViPayManager;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DDB2306921318DD800FE4F38 /* Build configuration list for PBXProject "ViPayManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDB2309721318DDA00FE4F38 /* Debug */,
+				DDB2309821318DDA00FE4F38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDB2309921318DDA00FE4F38 /* Build configuration list for PBXNativeTarget "ViPayManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDB2309A21318DDA00FE4F38 /* Debug */,
+				DDB2309B21318DDA00FE4F38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDB2309C21318DDA00FE4F38 /* Build configuration list for PBXNativeTarget "ViPayManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDB2309D21318DDA00FE4F38 /* Debug */,
+				DDB2309E21318DDA00FE4F38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDB2309F21318DDA00FE4F38 /* Build configuration list for PBXNativeTarget "ViPayManagerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDB230A021318DDA00FE4F38 /* Debug */,
+				DDB230A121318DDA00FE4F38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DDB2307821318DD800FE4F38 /* ViPayManager.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DDB2307921318DD800FE4F38 /* ViPayManager.xcdatamodel */,
+			);
+			currentVersion = DDB2307921318DD800FE4F38 /* ViPayManager.xcdatamodel */;
+			path = ViPayManager.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DDB2306621318DD800FE4F38 /* Project object */;
+}
