@@ -7,14 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32ADDB7F575F88DCC0974D33 /* Pods_ViPayManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE7A3CA42035BBCAA94FA16 /* Pods_ViPayManager.framework */; };
+		5A541A8977152E3573306B38 /* Pods_ViPayManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A71535A656CDE8AA46A7C6 /* Pods_ViPayManagerTests.framework */; };
+		7D9ED8D83C6CBE519A39F25C /* Pods_ViPayManagerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02FB9BAA3F85A20C71E8E8E /* Pods_ViPayManagerUITests.framework */; };
 		DDB2307221318DD800FE4F38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2307121318DD800FE4F38 /* AppDelegate.swift */; };
-		DDB2307421318DD800FE4F38 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2307321318DD800FE4F38 /* ViewController.swift */; };
-		DDB2307721318DD800FE4F38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB2307521318DD800FE4F38 /* Main.storyboard */; };
 		DDB2307A21318DD800FE4F38 /* ViPayManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDB2307821318DD800FE4F38 /* ViPayManager.xcdatamodeld */; };
 		DDB2307C21318DDA00FE4F38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB2307B21318DDA00FE4F38 /* Assets.xcassets */; };
 		DDB2307F21318DDA00FE4F38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB2307D21318DDA00FE4F38 /* LaunchScreen.storyboard */; };
 		DDB2308A21318DDA00FE4F38 /* ViPayManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2308921318DDA00FE4F38 /* ViPayManagerTests.swift */; };
 		DDB2309521318DDA00FE4F38 /* ViPayManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2309421318DDA00FE4F38 /* ViPayManagerUITests.swift */; };
+		DDB230A321318E7500FE4F38 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230A221318E7500FE4F38 /* CustomTabBarController.swift */; };
+		DDB230A521318E9E00FE4F38 /* RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230A421318E9D00FE4F38 /* RGB.swift */; };
+		DDB230A721318EF700FE4F38 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230A621318EF700FE4F38 /* OrdersViewController.swift */; };
+		DDB230A921318F5A00FE4F38 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230A821318F5A00FE4F38 /* ShopViewController.swift */; };
+		DDB230AB2131910A00FE4F38 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230AA2131910A00FE4F38 /* Extensions.swift */; };
+		DDB230AD2131928700FE4F38 /* OrdersHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230AC2131928700FE4F38 /* OrdersHeaderCollectionReusableView.swift */; };
+		DDB230AF213193E900FE4F38 /* MyConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230AE213193E900FE4F38 /* MyConstraints.swift */; };
+		DDB230BA2131956D00FE4F38 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB230B02131956B00FE4F38 /* OpenSans-Italic.ttf */; };
+		DDB230BB2131956D00FE4F38 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB230B12131956B00FE4F38 /* OpenSans-Bold.ttf */; };
+		DDB230BC2131956D00FE4F38 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB230B22131956B00FE4F38 /* OpenSans-SemiBold.ttf */; };
+		DDB230BD2131956D00FE4F38 /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB230B32131956B00FE4F38 /* OpenSans-Light.ttf */; };
+		DDB230BE2131956D00FE4F38 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB230B42131956B00FE4F38 /* OpenSans-Regular.ttf */; };
+		DDB230BF2131956D00FE4F38 /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB230B52131956C00FE4F38 /* OpenSans-SemiBoldItalic.ttf */; };
+		DDB230C02131956D00FE4F38 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB230B62131956C00FE4F38 /* OpenSans-LightItalic.ttf */; };
+		DDB230C12131956D00FE4F38 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB230B72131956C00FE4F38 /* OpenSans-ExtraBold.ttf */; };
+		DDB230C22131956D00FE4F38 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB230B82131956D00FE4F38 /* OpenSans-BoldItalic.ttf */; };
+		DDB230C32131956D00FE4F38 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB230B92131956D00FE4F38 /* OpenSans-ExtraBoldItalic.ttf */; };
+		DDB230C52131958500FE4F38 /* FontNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230C42131958500FE4F38 /* FontNames.swift */; };
+		DDB230C82131A51300FE4F38 /* OrdersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230C72131A51300FE4F38 /* OrdersCollectionViewCell.swift */; };
+		DDB230CD2132319400FE4F38 /* ConfirmOrderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230C92132319300FE4F38 /* ConfirmOrderCollectionViewCell.swift */; };
+		DDB230CE2132319400FE4F38 /* ConfirmOrderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230CA2132319300FE4F38 /* ConfirmOrderCollectionReusableView.swift */; };
+		DDB230CF2132319400FE4F38 /* ConfirmOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230CB2132319300FE4F38 /* ConfirmOrderViewController.swift */; };
+		DDB230D02132319400FE4F38 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230CC2132319400FE4F38 /* Food.swift */; };
+		DDB230D221323D3F00FE4F38 /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230D121323D3F00FE4F38 /* ShopCollectionViewCell.swift */; };
+		DDB230D42132863200FE4F38 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230D32132863100FE4F38 /* Network.swift */; };
+		DDB230D621328D7900FE4F38 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230D521328D7900FE4F38 /* LandingPageViewController.swift */; };
+		DDB230D82132915900FE4F38 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230D72132915900FE4F38 /* SignUpViewController.swift */; };
+		DDB230DA2132D4CD00FE4F38 /* DarkOverLay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230D92132D4CD00FE4F38 /* DarkOverLay.swift */; };
+		DDB230DC2132D55F00FE4F38 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230DB2132D55F00FE4F38 /* Alerts.swift */; };
+		DDB230DE2132D99600FE4F38 /* CustomAlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230DD2132D99600FE4F38 /* CustomAlertsView.swift */; };
+		DDB230E02132DDE900FE4F38 /* VerifyPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230DF2132DDE900FE4F38 /* VerifyPhoneViewController.swift */; };
+		DDB230E22132EAD100FE4F38 /* EnterCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230E12132EAD100FE4F38 /* EnterCodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +68,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EE7A3CA42035BBCAA94FA16 /* Pods_ViPayManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViPayManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11422317345CCAF49911A28F /* Pods-ViPayManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViPayManagerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViPayManagerTests/Pods-ViPayManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		37B9BDFF49B4E2D715D7080D /* Pods-ViPayManagerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViPayManagerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViPayManagerUITests/Pods-ViPayManagerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		41A71535A656CDE8AA46A7C6 /* Pods_ViPayManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViPayManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		71B7EEB6F8A50DBB5DAFDC45 /* Pods-ViPayManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViPayManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViPayManager/Pods-ViPayManager.release.xcconfig"; sourceTree = "<group>"; };
+		884BD93C12CA933864015813 /* Pods-ViPayManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViPayManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViPayManager/Pods-ViPayManager.debug.xcconfig"; sourceTree = "<group>"; };
+		A21BBFBC784BC9CD2AF28B33 /* Pods-ViPayManagerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViPayManagerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViPayManagerTests/Pods-ViPayManagerTests.release.xcconfig"; sourceTree = "<group>"; };
+		C69510DA49AEF7F4C4203C81 /* Pods-ViPayManagerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViPayManagerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViPayManagerUITests/Pods-ViPayManagerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		DDB2306E21318DD800FE4F38 /* ViPayManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViPayManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB2307121318DD800FE4F38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DDB2307321318DD800FE4F38 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DDB2307621318DD800FE4F38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDB2307921318DD800FE4F38 /* ViPayManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ViPayManager.xcdatamodel; sourceTree = "<group>"; };
 		DDB2307B21318DDA00FE4F38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDB2307E21318DDA00FE4F38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +88,39 @@
 		DDB2309021318DDA00FE4F38 /* ViPayManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViPayManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB2309421318DDA00FE4F38 /* ViPayManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViPayManagerUITests.swift; sourceTree = "<group>"; };
 		DDB2309621318DDA00FE4F38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDB230A221318E7500FE4F38 /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		DDB230A421318E9D00FE4F38 /* RGB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGB.swift; sourceTree = "<group>"; };
+		DDB230A621318EF700FE4F38 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		DDB230A821318F5A00FE4F38 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		DDB230AA2131910A00FE4F38 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DDB230AC2131928700FE4F38 /* OrdersHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		DDB230AE213193E900FE4F38 /* MyConstraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyConstraints.swift; sourceTree = "<group>"; };
+		DDB230B02131956B00FE4F38 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		DDB230B12131956B00FE4F38 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		DDB230B22131956B00FE4F38 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		DDB230B32131956B00FE4F38 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		DDB230B42131956B00FE4F38 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		DDB230B52131956C00FE4F38 /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		DDB230B62131956C00FE4F38 /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		DDB230B72131956C00FE4F38 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		DDB230B82131956D00FE4F38 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		DDB230B92131956D00FE4F38 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		DDB230C42131958500FE4F38 /* FontNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontNames.swift; sourceTree = "<group>"; };
+		DDB230C72131A51300FE4F38 /* OrdersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersCollectionViewCell.swift; sourceTree = "<group>"; };
+		DDB230C92132319300FE4F38 /* ConfirmOrderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmOrderCollectionViewCell.swift; sourceTree = "<group>"; };
+		DDB230CA2132319300FE4F38 /* ConfirmOrderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmOrderCollectionReusableView.swift; sourceTree = "<group>"; };
+		DDB230CB2132319300FE4F38 /* ConfirmOrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmOrderViewController.swift; sourceTree = "<group>"; };
+		DDB230CC2132319400FE4F38 /* Food.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		DDB230D121323D3F00FE4F38 /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
+		DDB230D32132863100FE4F38 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		DDB230D521328D7900FE4F38 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
+		DDB230D72132915900FE4F38 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		DDB230D92132D4CD00FE4F38 /* DarkOverLay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DarkOverLay.swift; sourceTree = "<group>"; };
+		DDB230DB2132D55F00FE4F38 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		DDB230DD2132D99600FE4F38 /* CustomAlertsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertsView.swift; sourceTree = "<group>"; };
+		DDB230DF2132DDE900FE4F38 /* VerifyPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneViewController.swift; sourceTree = "<group>"; };
+		DDB230E12132EAD100FE4F38 /* EnterCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeViewController.swift; sourceTree = "<group>"; };
+		E02FB9BAA3F85A20C71E8E8E /* Pods_ViPayManagerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViPayManagerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32ADDB7F575F88DCC0974D33 /* Pods_ViPayManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A541A8977152E3573306B38 /* Pods_ViPayManagerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +144,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D9ED8D83C6CBE519A39F25C /* Pods_ViPayManagerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4849DDE5C0905D713F599849 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				884BD93C12CA933864015813 /* Pods-ViPayManager.debug.xcconfig */,
+				71B7EEB6F8A50DBB5DAFDC45 /* Pods-ViPayManager.release.xcconfig */,
+				11422317345CCAF49911A28F /* Pods-ViPayManagerTests.debug.xcconfig */,
+				A21BBFBC784BC9CD2AF28B33 /* Pods-ViPayManagerTests.release.xcconfig */,
+				37B9BDFF49B4E2D715D7080D /* Pods-ViPayManagerUITests.debug.xcconfig */,
+				C69510DA49AEF7F4C4203C81 /* Pods-ViPayManagerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		718F568655C149475FC8D93F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0EE7A3CA42035BBCAA94FA16 /* Pods_ViPayManager.framework */,
+				41A71535A656CDE8AA46A7C6 /* Pods_ViPayManagerTests.framework */,
+				E02FB9BAA3F85A20C71E8E8E /* Pods_ViPayManagerUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DDB2306521318DD800FE4F38 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +181,8 @@
 				DDB2308821318DDA00FE4F38 /* ViPayManagerTests */,
 				DDB2309321318DDA00FE4F38 /* ViPayManagerUITests */,
 				DDB2306F21318DD800FE4F38 /* Products */,
+				4849DDE5C0905D713F599849 /* Pods */,
+				718F568655C149475FC8D93F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,8 +200,29 @@
 			isa = PBXGroup;
 			children = (
 				DDB2307121318DD800FE4F38 /* AppDelegate.swift */,
-				DDB2307321318DD800FE4F38 /* ViewController.swift */,
-				DDB2307521318DD800FE4F38 /* Main.storyboard */,
+				DDB230D521328D7900FE4F38 /* LandingPageViewController.swift */,
+				DDB230D92132D4CD00FE4F38 /* DarkOverLay.swift */,
+				DDB230DB2132D55F00FE4F38 /* Alerts.swift */,
+				DDB230DD2132D99600FE4F38 /* CustomAlertsView.swift */,
+				DDB230DF2132DDE900FE4F38 /* VerifyPhoneViewController.swift */,
+				DDB230E12132EAD100FE4F38 /* EnterCodeViewController.swift */,
+				DDB230D72132915900FE4F38 /* SignUpViewController.swift */,
+				DDB230A221318E7500FE4F38 /* CustomTabBarController.swift */,
+				DDB230A621318EF700FE4F38 /* OrdersViewController.swift */,
+				DDB230C72131A51300FE4F38 /* OrdersCollectionViewCell.swift */,
+				DDB230AC2131928700FE4F38 /* OrdersHeaderCollectionReusableView.swift */,
+				DDB230A821318F5A00FE4F38 /* ShopViewController.swift */,
+				DDB230D121323D3F00FE4F38 /* ShopCollectionViewCell.swift */,
+				DDB230A421318E9D00FE4F38 /* RGB.swift */,
+				DDB230D32132863100FE4F38 /* Network.swift */,
+				DDB230AA2131910A00FE4F38 /* Extensions.swift */,
+				DDB230AE213193E900FE4F38 /* MyConstraints.swift */,
+				DDB230C42131958500FE4F38 /* FontNames.swift */,
+				DDB230CA2132319300FE4F38 /* ConfirmOrderCollectionReusableView.swift */,
+				DDB230C92132319300FE4F38 /* ConfirmOrderCollectionViewCell.swift */,
+				DDB230CB2132319300FE4F38 /* ConfirmOrderViewController.swift */,
+				DDB230CC2132319400FE4F38 /* Food.swift */,
+				DDB230C62131959800FE4F38 /* Fonts */,
 				DDB2307B21318DDA00FE4F38 /* Assets.xcassets */,
 				DDB2307D21318DDA00FE4F38 /* LaunchScreen.storyboard */,
 				DDB2308021318DDA00FE4F38 /* Info.plist */,
@@ -128,6 +249,23 @@
 			path = ViPayManagerUITests;
 			sourceTree = "<group>";
 		};
+		DDB230C62131959800FE4F38 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DDB230B12131956B00FE4F38 /* OpenSans-Bold.ttf */,
+				DDB230B82131956D00FE4F38 /* OpenSans-BoldItalic.ttf */,
+				DDB230B72131956C00FE4F38 /* OpenSans-ExtraBold.ttf */,
+				DDB230B92131956D00FE4F38 /* OpenSans-ExtraBoldItalic.ttf */,
+				DDB230B02131956B00FE4F38 /* OpenSans-Italic.ttf */,
+				DDB230B32131956B00FE4F38 /* OpenSans-Light.ttf */,
+				DDB230B62131956C00FE4F38 /* OpenSans-LightItalic.ttf */,
+				DDB230B42131956B00FE4F38 /* OpenSans-Regular.ttf */,
+				DDB230B22131956B00FE4F38 /* OpenSans-SemiBold.ttf */,
+				DDB230B52131956C00FE4F38 /* OpenSans-SemiBoldItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +273,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDB2309921318DDA00FE4F38 /* Build configuration list for PBXNativeTarget "ViPayManager" */;
 			buildPhases = (
+				9CFC78BB53AAAC107F5042AE /* [CP] Check Pods Manifest.lock */,
 				DDB2306A21318DD800FE4F38 /* Sources */,
 				DDB2306B21318DD800FE4F38 /* Frameworks */,
 				DDB2306C21318DD800FE4F38 /* Resources */,
+				BE55C583BE4BB2710F11E8D5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +292,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDB2309C21318DDA00FE4F38 /* Build configuration list for PBXNativeTarget "ViPayManagerTests" */;
 			buildPhases = (
+				B5B5814E7BD170710AD80298 /* [CP] Check Pods Manifest.lock */,
 				DDB2308121318DDA00FE4F38 /* Sources */,
 				DDB2308221318DDA00FE4F38 /* Frameworks */,
 				DDB2308321318DDA00FE4F38 /* Resources */,
@@ -170,6 +311,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDB2309F21318DDA00FE4F38 /* Build configuration list for PBXNativeTarget "ViPayManagerUITests" */;
 			buildPhases = (
+				49A1B46514693D1484E2A176 /* [CP] Check Pods Manifest.lock */,
 				DDB2308C21318DDA00FE4F38 /* Sources */,
 				DDB2308D21318DDA00FE4F38 /* Frameworks */,
 				DDB2308E21318DDA00FE4F38 /* Resources */,
@@ -232,9 +374,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDB230BF2131956D00FE4F38 /* OpenSans-SemiBoldItalic.ttf in Resources */,
+				DDB230BD2131956D00FE4F38 /* OpenSans-Light.ttf in Resources */,
+				DDB230BA2131956D00FE4F38 /* OpenSans-Italic.ttf in Resources */,
+				DDB230C22131956D00FE4F38 /* OpenSans-BoldItalic.ttf in Resources */,
 				DDB2307F21318DDA00FE4F38 /* LaunchScreen.storyboard in Resources */,
+				DDB230BE2131956D00FE4F38 /* OpenSans-Regular.ttf in Resources */,
+				DDB230BC2131956D00FE4F38 /* OpenSans-SemiBold.ttf in Resources */,
+				DDB230C32131956D00FE4F38 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
+				DDB230BB2131956D00FE4F38 /* OpenSans-Bold.ttf in Resources */,
 				DDB2307C21318DDA00FE4F38 /* Assets.xcassets in Resources */,
-				DDB2307721318DD800FE4F38 /* Main.storyboard in Resources */,
+				DDB230C02131956D00FE4F38 /* OpenSans-LightItalic.ttf in Resources */,
+				DDB230C12131956D00FE4F38 /* OpenSans-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,14 +405,122 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		49A1B46514693D1484E2A176 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ViPayManagerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CFC78BB53AAAC107F5042AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ViPayManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5B5814E7BD170710AD80298 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ViPayManagerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE55C583BE4BB2710F11E8D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ViPayManager/Pods-ViPayManager-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ViPayManager/Pods-ViPayManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DDB2306A21318DD800FE4F38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDB2307421318DD800FE4F38 /* ViewController.swift in Sources */,
+				DDB230E22132EAD100FE4F38 /* EnterCodeViewController.swift in Sources */,
+				DDB230CD2132319400FE4F38 /* ConfirmOrderCollectionViewCell.swift in Sources */,
+				DDB230E02132DDE900FE4F38 /* VerifyPhoneViewController.swift in Sources */,
+				DDB230A521318E9E00FE4F38 /* RGB.swift in Sources */,
+				DDB230D02132319400FE4F38 /* Food.swift in Sources */,
+				DDB230A721318EF700FE4F38 /* OrdersViewController.swift in Sources */,
 				DDB2307221318DD800FE4F38 /* AppDelegate.swift in Sources */,
+				DDB230A321318E7500FE4F38 /* CustomTabBarController.swift in Sources */,
+				DDB230A921318F5A00FE4F38 /* ShopViewController.swift in Sources */,
+				DDB230D82132915900FE4F38 /* SignUpViewController.swift in Sources */,
+				DDB230DE2132D99600FE4F38 /* CustomAlertsView.swift in Sources */,
+				DDB230DA2132D4CD00FE4F38 /* DarkOverLay.swift in Sources */,
+				DDB230C52131958500FE4F38 /* FontNames.swift in Sources */,
+				DDB230D221323D3F00FE4F38 /* ShopCollectionViewCell.swift in Sources */,
+				DDB230C82131A51300FE4F38 /* OrdersCollectionViewCell.swift in Sources */,
+				DDB230D42132863200FE4F38 /* Network.swift in Sources */,
+				DDB230CF2132319400FE4F38 /* ConfirmOrderViewController.swift in Sources */,
+				DDB230AD2131928700FE4F38 /* OrdersHeaderCollectionReusableView.swift in Sources */,
+				DDB230D621328D7900FE4F38 /* LandingPageViewController.swift in Sources */,
 				DDB2307A21318DD800FE4F38 /* ViPayManager.xcdatamodeld in Sources */,
+				DDB230AF213193E900FE4F38 /* MyConstraints.swift in Sources */,
+				DDB230AB2131910A00FE4F38 /* Extensions.swift in Sources */,
+				DDB230DC2132D55F00FE4F38 /* Alerts.swift in Sources */,
+				DDB230CE2132319400FE4F38 /* ConfirmOrderCollectionReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +556,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DDB2307521318DD800FE4F38 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DDB2307621318DD800FE4F38 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DDB2307D21318DDA00FE4F38 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -432,11 +683,13 @@
 		};
 		DDB2309A21318DDA00FE4F38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 884BD93C12CA933864015813 /* Pods-ViPayManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3V56TFD2QD;
+				DEVELOPMENT_TEAM = BGHS3XMRCU;
 				INFOPLIST_FILE = ViPayManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,11 +703,13 @@
 		};
 		DDB2309B21318DDA00FE4F38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71B7EEB6F8A50DBB5DAFDC45 /* Pods-ViPayManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3V56TFD2QD;
+				DEVELOPMENT_TEAM = BGHS3XMRCU;
 				INFOPLIST_FILE = ViPayManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -468,6 +723,7 @@
 		};
 		DDB2309D21318DDA00FE4F38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11422317345CCAF49911A28F /* Pods-ViPayManagerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -489,6 +745,7 @@
 		};
 		DDB2309E21318DDA00FE4F38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A21BBFBC784BC9CD2AF28B33 /* Pods-ViPayManagerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +767,7 @@
 		};
 		DDB230A021318DDA00FE4F38 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37B9BDFF49B4E2D715D7080D /* Pods-ViPayManagerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,6 +788,7 @@
 		};
 		DDB230A121318DDA00FE4F38 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C69510DA49AEF7F4C4203C81 /* Pods-ViPayManagerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

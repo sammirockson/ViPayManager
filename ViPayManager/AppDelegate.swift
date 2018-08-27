@@ -8,15 +8,53 @@
 
 import UIKit
 import CoreData
+import Parse
+
+let defaultAppColor = RGB.sharedInstance.requiredColor(r: 51, g: 34, b: 211, alpha: 1.0)
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().tintColor = defaultAppColor
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: FontNames.OpenSansBold, size: 14)!]
+        UINavigationBar.appearance().isTranslucent = false
+        
+        UITabBar.appearance().tintColor = RGB.sharedInstance.requiredColor(r: 51, g: 34, b: 211, alpha: 1.0)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: FontNames.OpenSansSemiBold, size: 8)!], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: FontNames.OpenSansSemiBold, size: 8)!], for: .selected)
+        
+        Network.sharedInstance.initParse()
+        
+        
+        let obj = PFObject(className: "TestClass")
+        obj.setObject("Hello world from ViPayManager side", forKey: "subtitle")
+        obj.saveInBackground { (success, error) in
+            print(error?.localizedDescription as Any)
+            print(success)
+        }
+        
+        if PFUser.current() == nil {
+            
+            window?.rootViewController = UINavigationController(rootViewController: LandingPageViewController())
+
+        }else{
+            
+            window?.rootViewController = UINavigationController(rootViewController: CustomTabBarController())
+
+        }
+
+        
         return true
     }
 
