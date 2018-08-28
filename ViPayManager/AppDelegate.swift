@@ -37,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Network.sharedInstance.initParse()
         
         
+        
         let obj = PFObject(className: "TestClass")
         obj.setObject("Hello world from ViPayManager side", forKey: "subtitle")
         obj.saveInBackground { (success, error) in
@@ -44,12 +45,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(success)
         }
         
+        
         if PFUser.current() == nil {
-            
+        
             window?.rootViewController = UINavigationController(rootViewController: LandingPageViewController())
 
         }else{
-            
+
             window?.rootViewController = UINavigationController(rootViewController: CustomTabBarController())
 
         }

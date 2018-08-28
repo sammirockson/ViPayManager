@@ -10,6 +10,10 @@
 		32ADDB7F575F88DCC0974D33 /* Pods_ViPayManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE7A3CA42035BBCAA94FA16 /* Pods_ViPayManager.framework */; };
 		5A541A8977152E3573306B38 /* Pods_ViPayManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A71535A656CDE8AA46A7C6 /* Pods_ViPayManagerTests.framework */; };
 		7D9ED8D83C6CBE519A39F25C /* Pods_ViPayManagerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02FB9BAA3F85A20C71E8E8E /* Pods_ViPayManagerUITests.framework */; };
+		DD33A3D421352965005D9CE5 /* OptimizedFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD33A3D321352965005D9CE5 /* OptimizedFont.swift */; };
+		DD33A3D6213534F2005D9CE5 /* AddProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD33A3D5213534F2005D9CE5 /* AddProductsViewController.swift */; };
+		DD33A3D821353F7A005D9CE5 /* ProductsImagesContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD33A3D721353F7A005D9CE5 /* ProductsImagesContainerView.swift */; };
+		DD33A3DA213542E6005D9CE5 /* AddProductsImagesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD33A3D9213542E6005D9CE5 /* AddProductsImagesViewCell.swift */; };
 		DDB2307221318DD800FE4F38 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB2307121318DD800FE4F38 /* AppDelegate.swift */; };
 		DDB2307A21318DD800FE4F38 /* ViPayManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDB2307821318DD800FE4F38 /* ViPayManager.xcdatamodeld */; };
 		DDB2307C21318DDA00FE4F38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB2307B21318DDA00FE4F38 /* Assets.xcassets */; };
@@ -76,6 +80,10 @@
 		884BD93C12CA933864015813 /* Pods-ViPayManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViPayManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ViPayManager/Pods-ViPayManager.debug.xcconfig"; sourceTree = "<group>"; };
 		A21BBFBC784BC9CD2AF28B33 /* Pods-ViPayManagerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViPayManagerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViPayManagerTests/Pods-ViPayManagerTests.release.xcconfig"; sourceTree = "<group>"; };
 		C69510DA49AEF7F4C4203C81 /* Pods-ViPayManagerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ViPayManagerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ViPayManagerUITests/Pods-ViPayManagerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DD33A3D321352965005D9CE5 /* OptimizedFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptimizedFont.swift; sourceTree = "<group>"; };
+		DD33A3D5213534F2005D9CE5 /* AddProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductsViewController.swift; sourceTree = "<group>"; };
+		DD33A3D721353F7A005D9CE5 /* ProductsImagesContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsImagesContainerView.swift; sourceTree = "<group>"; };
+		DD33A3D9213542E6005D9CE5 /* AddProductsImagesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductsImagesViewCell.swift; sourceTree = "<group>"; };
 		DDB2306E21318DD800FE4F38 /* ViPayManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViPayManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB2307121318DD800FE4F38 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB2307921318DD800FE4F38 /* ViPayManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ViPayManager.xcdatamodel; sourceTree = "<group>"; };
@@ -203,6 +211,7 @@
 				DDB230D521328D7900FE4F38 /* LandingPageViewController.swift */,
 				DDB230D92132D4CD00FE4F38 /* DarkOverLay.swift */,
 				DDB230DB2132D55F00FE4F38 /* Alerts.swift */,
+				DD33A3D321352965005D9CE5 /* OptimizedFont.swift */,
 				DDB230DD2132D99600FE4F38 /* CustomAlertsView.swift */,
 				DDB230DF2132DDE900FE4F38 /* VerifyPhoneViewController.swift */,
 				DDB230E12132EAD100FE4F38 /* EnterCodeViewController.swift */,
@@ -213,6 +222,9 @@
 				DDB230AC2131928700FE4F38 /* OrdersHeaderCollectionReusableView.swift */,
 				DDB230A821318F5A00FE4F38 /* ShopViewController.swift */,
 				DDB230D121323D3F00FE4F38 /* ShopCollectionViewCell.swift */,
+				DD33A3D5213534F2005D9CE5 /* AddProductsViewController.swift */,
+				DD33A3D721353F7A005D9CE5 /* ProductsImagesContainerView.swift */,
+				DD33A3D9213542E6005D9CE5 /* AddProductsImagesViewCell.swift */,
 				DDB230A421318E9D00FE4F38 /* RGB.swift */,
 				DDB230D32132863100FE4F38 /* Network.swift */,
 				DDB230AA2131910A00FE4F38 /* Extensions.swift */,
@@ -471,6 +483,7 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/OpalImagePicker/OpalImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -481,6 +494,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpalImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -504,14 +518,17 @@
 				DDB230D02132319400FE4F38 /* Food.swift in Sources */,
 				DDB230A721318EF700FE4F38 /* OrdersViewController.swift in Sources */,
 				DDB2307221318DD800FE4F38 /* AppDelegate.swift in Sources */,
+				DD33A3D821353F7A005D9CE5 /* ProductsImagesContainerView.swift in Sources */,
 				DDB230A321318E7500FE4F38 /* CustomTabBarController.swift in Sources */,
 				DDB230A921318F5A00FE4F38 /* ShopViewController.swift in Sources */,
 				DDB230D82132915900FE4F38 /* SignUpViewController.swift in Sources */,
 				DDB230DE2132D99600FE4F38 /* CustomAlertsView.swift in Sources */,
+				DD33A3DA213542E6005D9CE5 /* AddProductsImagesViewCell.swift in Sources */,
 				DDB230DA2132D4CD00FE4F38 /* DarkOverLay.swift in Sources */,
 				DDB230C52131958500FE4F38 /* FontNames.swift in Sources */,
 				DDB230D221323D3F00FE4F38 /* ShopCollectionViewCell.swift in Sources */,
 				DDB230C82131A51300FE4F38 /* OrdersCollectionViewCell.swift in Sources */,
+				DD33A3D421352965005D9CE5 /* OptimizedFont.swift in Sources */,
 				DDB230D42132863200FE4F38 /* Network.swift in Sources */,
 				DDB230CF2132319400FE4F38 /* ConfirmOrderViewController.swift in Sources */,
 				DDB230AD2131928700FE4F38 /* OrdersHeaderCollectionReusableView.swift in Sources */,
@@ -520,6 +537,7 @@
 				DDB230AF213193E900FE4F38 /* MyConstraints.swift in Sources */,
 				DDB230AB2131910A00FE4F38 /* Extensions.swift in Sources */,
 				DDB230DC2132D55F00FE4F38 /* Alerts.swift in Sources */,
+				DD33A3D6213534F2005D9CE5 /* AddProductsViewController.swift in Sources */,
 				DDB230CE2132319400FE4F38 /* ConfirmOrderCollectionReusableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

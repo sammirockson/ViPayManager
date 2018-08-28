@@ -210,6 +210,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     }()
     
   
+    var phoneNumber: String?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -286,6 +288,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             return
         }
         
+        
+        
         for em in (emailTextField.text?.characters)! {
             
             if em == "@" {
@@ -313,9 +317,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         let businessName = companyTextField.text!
         let email = emailTextField.text!
         let password = passwordTextField.text!
+        let phoneNumber = self.phoneNumber!
         
         let imageData = UIImageJPEGRepresentation(self.profileImageView.image!, 0.5)
-        let imageFile = PFFile(data: imageData!)
+        let imageFile = PFFile(name: "file.jpg", data: imageData!)!
+        
         
         let user = PFUser()
         user.username = businessName
@@ -323,8 +329,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         user.email = email
         user.setObject(true, forKey: "isBusiness")
         user.setObject(false, forKey: "isActivated")
-        user.setObject(imageFile!, forKey: "profileImageFile")
-        user.setObject("1234567890", forKey: "mobile")
+        user.setObject(imageFile, forKey: "profileImageFile")
+        user.setObject(phoneNumber, forKey: "mobile")
+        user.setObject("+233", forKey: "countryCode")
+        user.setObject(false, forKey: "isOpen")
+
+
 
         
         if fileImageview.image == #imageLiteral(resourceName: "file") {
@@ -332,8 +342,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             //No file was selected
             
             let imagePlace = #imageLiteral(resourceName: "filePlaceholder")
-            let imageDat = UIImageJPEGRepresentation(imagePlace, 0.5)
-            let pFile = PFFile(data: imageDat!)!
+            let imageDat = UIImageJPEGRepresentation(imagePlace, 1.0)
+            let pFile = PFFile(name: "file.jpg", data: imageDat!)!
             
             user.setObject(pFile, forKey: "companyDoc")
             user.setObject(false, forKey: "isDocAttached")
@@ -344,7 +354,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         }else{
             
             let imageDat = UIImageJPEGRepresentation(fileImageview.image!, 1.0)
-            let pFile = PFFile(data: imageDat!)!
+            let pFile = PFFile(name: "file.jpg", data: imageDat!)!
             user.setObject(pFile, forKey: "companyDoc")
             user.setObject(true, forKey: "isDocAttached")
 

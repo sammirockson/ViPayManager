@@ -63,6 +63,9 @@ class EnterCodeViewController: UIViewController {
         button.addTarget(self, action: #selector(handleBackButton), for: .touchUpInside)
         return button
     }()
+    
+    
+    var phoneNumber: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,7 +112,10 @@ class EnterCodeViewController: UIViewController {
     
     @objc func handleVerifyCode(){
         
-        navigationController?.pushViewController(SignUpViewController(), animated: true)
+        
+        let signUpVC = SignUpViewController()
+        signUpVC.phoneNumber = self.phoneNumber
+        navigationController?.pushViewController(signUpVC, animated: true)
         
     }
     

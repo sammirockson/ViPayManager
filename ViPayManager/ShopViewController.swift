@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ShopViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -70,6 +71,21 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         setUpViews()
         
         collectionView.register(ShopCollectionViewCell.self, forCellWithReuseIdentifier: identifier)
+        
+      
+        let currentUser = PFUser.current()
+        if let isOpen = currentUser?.object(forKey: "isOpen") as? Bool {
+            
+            if isOpen == true {
+                
+                self.closeOpenSwitch.setOn(true, animated: true)
+                
+            }else{
+                
+                self.closeOpenSwitch.setOn(false, animated: true)
+                
+            }
+        }
 
     }
 
@@ -83,6 +99,7 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewWillAppear(animated)
         
         navigationController?.isNavigationBarHidden = true
+        self.updateShopInfo()
         
     }
     
@@ -93,23 +110,89 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+       
+        
+      
+    }
+    
+    
+    
+    func updateShopInfo(){
+        
+        let query = PFUser.query()
+        query?.getObjectInBackground(withId: (PFUser.current()?.objectId!)!, block: { (user, error) in
+            
+            if error == nil {
+                
+                DispatchQueue.main.async {
+                    
+                    if let isOpen = user?.object(forKey: "isOpen") as? Bool {
+                        
+                        if isOpen == true {
+                            
+                            self.closeOpenSwitch.setOn(true, animated: true)
+                            
+                        }else{
+                            
+                            self.closeOpenSwitch.setOn(false, animated: true)
+                            
+                        }
+                    }
+                    
+                    
+                }
+                
+            }
+        })
+    }
+    
     @objc func handleSwitched(){
         
         if self.closeOpenSwitch.isOn {
             
             self.shopStatusLabel.text = "Open"
+            self.updateShopStatus(status: true)
             
         }else{
             
             self.shopStatusLabel.text = "Closed"
+            self.updateShopStatus(status: false)
+
 
         }
+        
+    }
+    
+    func updateShopStatus(status: Bool){
+        
+        let currentUser = PFUser.current()
+        
+        currentUser?.setObject(status, forKey: "isOpen")
+        currentUser?.saveEventually({ (success, error) in
+            if error == nil {
+                
+                print("shop updated successfully")
+                
+            }else{
+                
+                print("shop updated with error \(String(describing: error?.localizedDescription))")
+
+            }
+        })
+        
         
     }
     
     @objc func handleAddProduct(){
         
         print("add product")
+        
+        let addProductsVC = AddProductsViewController()
+        addProductsVC.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(addProductsVC, animated: true)
     }
     
     func setUpViews(){
@@ -126,14 +209,7 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
         shopStatusLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         shopStatusLabel.centerYAnchor.constraint(equalTo: addProductImageView.centerYAnchor).isActive = true
         
-//        if UIDevice.current.isIphoneX {
-//
-//            closeOpenSwitch.centerYAnchor.constraint(equalTo: customNavContainerView.centerYAnchor, constant: 10).isActive = true
-//
-//        }else{
-//
-//
-//        }
+
         
         closeOpenSwitch.centerYAnchor.constraint(equalTo: customNavContainerView.centerYAnchor, constant: 10).isActive = true
 

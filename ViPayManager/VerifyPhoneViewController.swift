@@ -10,7 +10,6 @@ import UIKit
 
 class VerifyPhoneViewController: UIViewController , UITextFieldDelegate{
     
-    
     let customNavContainerView: UIImageView = {
         let v = UIImageView()
         v.image = #imageLiteral(resourceName: "Background")
@@ -26,7 +25,7 @@ class VerifyPhoneViewController: UIViewController , UITextFieldDelegate{
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Verify Mobile Number"
-        label.font = UIFont(name: FontNames.OpenSansSemiBold, size: 16)
+        label.font = OptimizedFont.font(fontName: FontNames.OpenSansSemiBold, fontSize: 16)
         label.textAlignment = .center
         label.textColor = .white
         return label
@@ -36,11 +35,8 @@ class VerifyPhoneViewController: UIViewController , UITextFieldDelegate{
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "+233"
-        label.font = UIFont(name: FontNames.OpenSansSemiBold, size: 25)
+        label.font = OptimizedFont.font(fontName: FontNames.OpenSansSemiBold, fontSize: 25)
         label.textAlignment = .right
-//        label.layer.borderColor = defaultAppColor.cgColor
-//        label.layer.borderWidth = 0.2
-//        label.layer.cornerRadius = 4
         label.clipsToBounds = true
         return label
     }()
@@ -49,7 +45,7 @@ class VerifyPhoneViewController: UIViewController , UITextFieldDelegate{
         let txtField = UITextField()
         txtField.placeholder = "123 4567 890"
         txtField.keyboardType = .phonePad
-        txtField.font = UIFont(name: FontNames.OpenSansSemiBold, size: 25)
+        txtField.font = OptimizedFont.font(fontName: FontNames.OpenSansSemiBold, fontSize: 25)
         txtField.autocorrectionType = .no
         txtField.translatesAutoresizingMaskIntoConstraints = false
         txtField.delegate = self
@@ -64,7 +60,7 @@ class VerifyPhoneViewController: UIViewController , UITextFieldDelegate{
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 24
         button.clipsToBounds = true
-        button.titleLabel?.font = UIFont(name: FontNames.OpenSansSemiBold, size: 16)
+        button.titleLabel?.font = OptimizedFont.font(fontName: FontNames.OpenSansSemiBold, fontSize: 16)
         button.addTarget(self, action: #selector(handleSendCode), for: .touchUpInside)
         return button
     }()
@@ -76,15 +72,15 @@ class VerifyPhoneViewController: UIViewController , UITextFieldDelegate{
         button.addTarget(self, action: #selector(handleBackButton), for: .touchUpInside)
         return button
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         setUpViews()
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -126,6 +122,7 @@ class VerifyPhoneViewController: UIViewController , UITextFieldDelegate{
         phoneNumberField.resignFirstResponder()
         
         let signUpVC = EnterCodeViewController()
+        signUpVC.phoneNumber = phoneNumberField.text!
         navigationController?.pushViewController(signUpVC, animated: true)
         
         
@@ -143,11 +140,11 @@ class VerifyPhoneViewController: UIViewController , UITextFieldDelegate{
     
     var maximumLength = 11
     let phoneDigits =  "0123456789"
-
+    
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-       
+        
         if textField == self.phoneNumberField {
             
             self.maximumLength = 11
@@ -181,23 +178,25 @@ class VerifyPhoneViewController: UIViewController , UITextFieldDelegate{
         customNavContainerView.addSubview(backButton)
         customNavContainerView.addSubview(navTitleLabel)
         
+        view.addSubview(phoneNumberField)
         view.addSubview(countryCodeLabel)
         view.addSubview(sendCodeButton)
-        view.addSubview(phoneNumberField)
-
-
-        phoneNumberField.leftAnchor.constraint(equalTo: countryCodeLabel.rightAnchor, constant: 0).isActive = true
-        phoneNumberField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -8).isActive = true
+        
+        
+        
+        
+        phoneNumberField.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 40).isActive = true
+        phoneNumberField.widthAnchor.constraint(equalToConstant: 200).isActive = true
         phoneNumberField.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        phoneNumberField.centerYAnchor.constraint(equalTo: countryCodeLabel.centerYAnchor).isActive = true
+        phoneNumberField.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -80).isActive = true
         
         sendCodeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         sendCodeButton.topAnchor.constraint(equalTo: countryCodeLabel.bottomAnchor, constant: 70).isActive = true
         sendCodeButton.widthAnchor.constraint(equalToConstant: 300).isActive = true
         sendCodeButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
-        countryCodeLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -70).isActive = true
-        countryCodeLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        countryCodeLabel.rightAnchor.constraint(equalTo: phoneNumberField.leftAnchor).isActive = true
+        countryCodeLabel.centerYAnchor.constraint(equalTo: phoneNumberField.centerYAnchor).isActive = true
         countryCodeLabel.widthAnchor.constraint(equalToConstant: 60).isActive = true
         countryCodeLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
@@ -209,11 +208,11 @@ class VerifyPhoneViewController: UIViewController , UITextFieldDelegate{
         if UIDevice.current.isIphoneX {
             
             backButton.centerYAnchor.constraint(equalTo: customNavContainerView.centerYAnchor, constant: 15).isActive = true
-
+            
         }else{
             
             backButton.centerYAnchor.constraint(equalTo: customNavContainerView.centerYAnchor, constant: 10).isActive = true
-
+            
         }
         backButton.leftAnchor.constraint(equalTo: customNavContainerView.leftAnchor, constant: 15).isActive = true
         backButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
@@ -233,6 +232,5 @@ class VerifyPhoneViewController: UIViewController , UITextFieldDelegate{
             
         }
     }
-   
 
 }
