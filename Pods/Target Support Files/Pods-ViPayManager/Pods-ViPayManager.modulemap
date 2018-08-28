@@ -1,0 +1,6 @@
+framework module Pods_ViPayManager {
+  umbrella header "Pods-ViPayManager-umbrella.h"
+
+  export *
+  module * { export * }
+}
