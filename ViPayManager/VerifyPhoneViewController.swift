@@ -75,10 +75,8 @@ class VerifyPhoneViewController: UIViewController , UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = .white
         setUpViews()
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -205,14 +203,10 @@ class VerifyPhoneViewController: UIViewController , UITextFieldDelegate{
         navTitleLabel.heightAnchor.constraint(equalToConstant: 34).isActive = true
         navTitleLabel.centerYAnchor.constraint(equalTo: backButton.centerYAnchor).isActive = true
         
-        if UIDevice.current.isIphoneX {
-            
+        if isCurvedDevice {
             backButton.centerYAnchor.constraint(equalTo: customNavContainerView.centerYAnchor, constant: 15).isActive = true
-            
         }else{
-            
             backButton.centerYAnchor.constraint(equalTo: customNavContainerView.centerYAnchor, constant: 10).isActive = true
-            
         }
         backButton.leftAnchor.constraint(equalTo: customNavContainerView.leftAnchor, constant: 15).isActive = true
         backButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
@@ -221,15 +215,10 @@ class VerifyPhoneViewController: UIViewController , UITextFieldDelegate{
         customNavContainerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         customNavContainerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         customNavContainerView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        if UIDevice.current.isIphoneX {
-            
-            customNavContainerView.heightAnchor.constraint(equalToConstant: 90).isActive = true
-            
-            
+        if isCurvedDevice {
+            customNavContainerView.heightAnchor.constraint(equalToConstant: 70).isActive = true
         }else{
-            
-            customNavContainerView.heightAnchor.constraint(equalToConstant: 80).isActive = true
-            
+            customNavContainerView.heightAnchor.constraint(equalToConstant: 64).isActive = true
         }
     }
 

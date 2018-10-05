@@ -93,7 +93,7 @@ class ConfirmOrderViewController: UIViewController, UICollectionViewDelegateFlow
         setUpViews()
         view.backgroundColor = .white
         collectionView.register(ConfirmOrderCollectionViewCell.self, forCellWithReuseIdentifier: identifier)
-        collectionView.register(ConfirmOrderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId)
+        collectionView.register(ConfirmOrderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
     }
 
     override func didReceiveMemoryWarning() {
@@ -182,14 +182,8 @@ class ConfirmOrderViewController: UIViewController, UICollectionViewDelegateFlow
         view.addSubview(backButton)
         
         view.addSubview(bottomItemsContainerView)
-//        bottomItemsContainerView.addSubview(totalPriceLabel)
         bottomItemsContainerView.addSubview(payLabel)
 
-        
-//        totalPriceLabel.leftAnchor.constraint(equalTo: bottomItemsContainerView.leftAnchor, constant: 20).isActive = true
-//        totalPriceLabel.rightAnchor.constraint(equalTo: payLabel.leftAnchor, constant: -5).isActive = true
-//        totalPriceLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
-//        totalPriceLabel.centerYAnchor.constraint(equalTo: bottomItemsContainerView.centerYAnchor).isActive = true
         
         payLabel.bottomAnchor.constraint(equalTo: bottomItemsContainerView.bottomAnchor, constant: 0).isActive = true
         payLabel.rightAnchor.constraint(equalTo: bottomItemsContainerView.rightAnchor,constant: 0).isActive = true
@@ -207,15 +201,10 @@ class ConfirmOrderViewController: UIViewController, UICollectionViewDelegateFlow
         backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         backgroundImage.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         
-        if UIDevice.current.isIphoneX {
-            
+        if isCurvedDevice {
             backButton.centerYAnchor.constraint(equalTo: customNavContainerView.centerYAnchor, constant: 15).isActive = true
-            
-            
         }else{
-            
             backButton.centerYAnchor.constraint(equalTo: customNavContainerView.centerYAnchor, constant: 10).isActive = true
-            
         }
         backButton.leftAnchor.constraint(equalTo: customNavContainerView.leftAnchor, constant: 15).isActive = true
         backButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
@@ -229,15 +218,10 @@ class ConfirmOrderViewController: UIViewController, UICollectionViewDelegateFlow
         customNavContainerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         customNavContainerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         customNavContainerView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        if UIDevice.current.isIphoneX {
-            
+        if isCurvedDevice {
             customNavContainerView.heightAnchor.constraint(equalToConstant: 90).isActive = true
-            
-            
         }else{
-            
             customNavContainerView.heightAnchor.constraint(equalToConstant: 80).isActive = true
-            
         }
         
     }
@@ -290,7 +274,7 @@ class ConfirmOrderViewController: UIViewController, UICollectionViewDelegateFlow
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         var headerView: ConfirmOrderCollectionReusableView?
-        headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId, for: indexPath) as? ConfirmOrderCollectionReusableView
+        headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId, for: indexPath) as? ConfirmOrderCollectionReusableView
         headerView?.backgroundColor = .clear
         return headerView!
     }

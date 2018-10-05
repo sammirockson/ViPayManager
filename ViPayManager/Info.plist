@@ -58,5 +58,7 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Select profile image</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Get your company location.</string>
 </dict>
 </plist>

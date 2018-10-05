@@ -13,6 +13,9 @@ target 'ViPayManager' do
     pod 'SwiftyJSON'
     pod 'Parse'
     pod 'OpalImagePicker'
+    pod 'SnapKit'
+    pod 'GooglePlaces'
+    pod 'GooglePlacePicker'
 
   target 'ViPayManagerTests' do
     inherit! :search_paths

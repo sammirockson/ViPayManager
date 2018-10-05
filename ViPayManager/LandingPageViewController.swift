@@ -63,25 +63,25 @@ class LandingPageViewController: UIViewController {
         view.addSubview(declineOrderButton)
         
         
-        declineOrderButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -80).isActive = true
-        declineOrderButton.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        declineOrderButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        declineOrderButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: -80.all).isActive = true
+        declineOrderButton.widthAnchor.constraint(equalToConstant: 150.all).isActive = true
+        declineOrderButton.heightAnchor.constraint(equalToConstant: 50.all).isActive = true
         if #available(iOS 11.0, *) {
-            declineOrderButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+            declineOrderButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.all).isActive = true
         } else {
             // Fallback on earlier versions
-            declineOrderButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70).isActive = true
+            declineOrderButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70.all).isActive = true
             
         }
         
-        signUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 80).isActive = true
-        signUpButton.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        signUpButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        signUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 80.all).isActive = true
+        signUpButton.widthAnchor.constraint(equalToConstant: 150.all).isActive = true
+        signUpButton.heightAnchor.constraint(equalToConstant: 50.all).isActive = true
         if #available(iOS 11.0, *) {
-            signUpButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+            signUpButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20.all).isActive = true
         } else {
             // Fallback on earlier versions
-            signUpButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70).isActive = true
+            signUpButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70.all).isActive = true
 
         }
         

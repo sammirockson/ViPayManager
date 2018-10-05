@@ -9,14 +9,22 @@
 import UIKit
 import Parse
 import SVProgressHUD
+import CoreLocation
 
 let lightBlueColor = UIColor(red:0.01, green:0.47, blue:0.64, alpha:1)
 let deepOrangeColor = UIColor(red:0.83, green:0.26, blue:0.02, alpha:1)
 let lightGrayColor = UIColor(red: 245 / 255, green: 245 / 255, blue: 245 / 255, alpha: 1)
 
+enum BusinessType: Int {
+    case shop = 0
+    case restaurant
+    case housing
+    case carRentals
+    case hotel
+    case service
+}
 
-
-class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate , CLLocationManagerDelegate{
     
     lazy var backgroundImageView: UIImageView = {
         let v = UIImageView()
@@ -41,7 +49,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     lazy var profileImageView: UIImageView = {
         let v = UIImageView()
         v.image = #imageLiteral(resourceName: "placeholder")
-        v.layer.cornerRadius = 60
+        v.layer.cornerRadius = 60.all
         v.contentMode = .scaleAspectFill
         v.clipsToBounds = true
         v.isUserInteractionEnabled = true
@@ -202,15 +210,55 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: FontNames.OpenSansRegular, size: 12)
-        label.text = "Please, tap to upload a copy of your company registration document. We will verify the document before your account will activated."
+        label.text = "Please, tap to upload a copy of your company registration document. We will verify the document before your account will  be activated."
         label.isUserInteractionEnabled = true
         label.textColor = .red
         label.numberOfLines = 0
         return label
     }()
     
+    let businessTypeContainerView: UIView = {
+        let v = UIView()
+        v.translatesAutoresizingMaskIntoConstraints = false
+        v.backgroundColor = lightGrayColor
+        v.layer.cornerRadius = 8
+        v.clipsToBounds = true
+        return v
+    }()
+    
+    lazy var businessLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = RGB.sharedInstance.requiredColor(r: 12, g: 0, b: 51, alpha: 1.0)
+        label.alpha = 0.65
+        label.font = UIFont(name: FontNames.OpenSansRegular, size: 14)
+        label.text = "Business type"
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleBusinessType)))
+        return label
+    }()
+    
+    lazy var selectBusinessView: SelectorContainerView = {
+        let v = SelectorContainerView(frame: CGRect(x: 0, y: view.frame.height, width: view.frame.width, height: 300.all))
+        v.delegate = self
+        v.backgroundColor = .white
+        return v
+    }()
+    
+    lazy var blurView: UIView = {
+        let v = UIView(frame: view.frame)
+        v.backgroundColor = UIColor(white: 0.1, alpha: 0.5)
+        v.alpha = 0
+        v.isUserInteractionEnabled = true
+        v.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDismiss)))
+        return v
+    }()
   
     var phoneNumber: String?
+    var businessType: BusinessType = .shop
+
+    let locationManager = CLLocationManager()
+    var currentLocation: CLLocationCoordinate2D?
 
     
     override func viewDidLoad() {
@@ -219,6 +267,20 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         view.backgroundColor = .white
         UIApplication.shared.statusBarStyle = .lightContent
         setUpViews()
+        view.addSubview(blurView)
+        view.addSubview(selectBusinessView)
+        
+        
+            self.locationManager.requestWhenInUseAuthorization()
+            if CLLocationManager.locationServicesEnabled() {
+                locationManager.delegate = self
+                locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+                locationManager.startUpdatingLocation()
+            }else{
+                Alerts.shareInstance.alertDisplay(vc: self, reason: "Turn on your location to enable us detect your company location.")
+
+             }
+       
 
     }
 
@@ -228,15 +290,44 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
         navigationController?.isNavigationBarHidden = true
-        
     }
     
     @objc func dismissKeyboard(){
-        
         view.endEditing(true)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let userLocation:CLLocation = locations[0] as CLLocation
+        self.currentLocation = userLocation.coordinate
+        manager.stopUpdatingLocation()
+    }
+    
+    @objc func handleDismiss(){
+        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.blurView.alpha = 0
+            self.selectBusinessView.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: 300.all)
+        }) { (completed) in
+            
+        }
+      
+        
+    }
+    
+    @objc func handleBusinessType(){
+        
+        self.passwordTextField.resignFirstResponder()
+        self.emailTextField.resignFirstResponder()
+        self.companyTextField.resignFirstResponder()
+
+
+        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.blurView.alpha = 1
+            self.selectBusinessView.frame = CGRect(x: 0, y: self.view.frame.height - 300.all, width: self.view.frame.width, height: 300.all)
+        }) { (completed) in
+            
+        }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -319,12 +410,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         let password = passwordTextField.text!
         let phoneNumber = self.phoneNumber!
         
-        let imageData = UIImageJPEGRepresentation(self.profileImageView.image!, 0.5)
+        let imageData = self.profileImageView.image!.jpegData(compressionQuality: 0.5)
         let imageFile = PFFile(name: "file.jpg", data: imageData!)!
         
         
         let user = PFUser()
-        user.username = businessName
+        user.username = self.phoneNumber
+        user.setObject(businessName, forKey: "displayName")
         user.password = password
         user.email = email
         user.setObject(true, forKey: "isBusiness")
@@ -333,8 +425,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         user.setObject(phoneNumber, forKey: "mobile")
         user.setObject("+233", forKey: "countryCode")
         user.setObject(false, forKey: "isOpen")
-
-
+        user.setObject(self.businessType.rawValue, forKey: "businessType")
+        if let coordinates = self.currentLocation {
+            let PFLoc = PFGeoPoint(latitude: coordinates.latitude, longitude: coordinates.longitude)
+            user.setObject(PFLoc, forKey: "currentLocation")
+        }
 
         
         if fileImageview.image == #imageLiteral(resourceName: "file") {
@@ -342,18 +437,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             //No file was selected
             
             let imagePlace = #imageLiteral(resourceName: "filePlaceholder")
-            let imageDat = UIImageJPEGRepresentation(imagePlace, 1.0)
+            let imageDat = imagePlace.jpegData(compressionQuality: 1.0)
             let pFile = PFFile(name: "file.jpg", data: imageDat!)!
             
             user.setObject(pFile, forKey: "companyDoc")
             user.setObject(false, forKey: "isDocAttached")
-
-
-            
-            
         }else{
             
-            let imageDat = UIImageJPEGRepresentation(fileImageview.image!, 1.0)
+            let imageDat = fileImageview.image!.jpegData(compressionQuality: 1.0)
             let pFile = PFFile(name: "file.jpg", data: imageDat!)!
             user.setObject(pFile, forKey: "companyDoc")
             user.setObject(true, forKey: "isDocAttached")
@@ -435,34 +526,29 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         self.dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
         if isDocumentPick == true {
             
-            if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-                
+            if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
                 self.fileImageview.image = image
             }
             
-            if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
-                
+            if let editedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage {
                 self.fileImageview.image = editedImage
-                
             }
             
             
         }else{
            
-            if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-                
+            if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
                 self.profileImageView.image = image
             }
             
-            if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
-                
+            if let editedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage {
                 self.profileImageView.image = editedImage
-                
             }
             
         }
@@ -577,14 +663,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         view.addSubview(signUpButton)
         view.addSubview(backButton)
         
-        if UIDevice.current.isIphoneX {
-            
-            backButton.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 60).isActive = true
-
+        if isCurvedDevice {
+            backButton.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 60.all).isActive = true
         }else{
-            
-            backButton.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 40).isActive = true
-
+            backButton.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 40.all).isActive = true
         }
         backButton.leftAnchor.constraint(equalTo: containerView.leftAnchor).isActive = true
         backButton.widthAnchor.constraint(equalToConstant: (frame.width / 2) - 31).isActive = true
@@ -592,18 +674,14 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         
         
         
-        if UIDevice.current.isIphoneX {
-
-            signUpButton.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 60).isActive = true
-
+        if isCurvedDevice {
+            signUpButton.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 60.all).isActive = true
         }else{
-            
-            signUpButton.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 40).isActive = true
-
+            signUpButton.topAnchor.constraint(equalTo: containerView.bottomAnchor, constant: 40.all).isActive = true
         }
         signUpButton.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
-        signUpButton.widthAnchor.constraint(equalToConstant: (frame.width / 2) - 31).isActive = true
-        signUpButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        signUpButton.widthAnchor.constraint(equalToConstant: (frame.width / 2) - 31.all).isActive = true
+        signUpButton.heightAnchor.constraint(equalToConstant: 50.all).isActive = true
         
         containerView.addSubview(companyContainerView)
         companyContainerView.addSubview(companyTitleLabel)
@@ -619,98 +697,136 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         passwordContainerView.addSubview(passwordLabel)
         passwordContainerView.addSubview(passwordTextField)
         
+        containerView.addSubview(businessTypeContainerView)
+        businessTypeContainerView.addSubview(businessLabel)
+        
+        
         containerView.addSubview(uploadDocsContainerView)
         uploadDocsContainerView.addSubview(fileImageview)
         uploadDocsContainerView.addSubview(noteLabel)
         
+        businessTypeContainerView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -8.all).isActive = true
+        businessTypeContainerView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 8.all).isActive = true
+        businessTypeContainerView.heightAnchor.constraint(equalToConstant: 50.all).isActive = true
+        businessTypeContainerView.topAnchor.constraint(equalTo: passwordContainerView.bottomAnchor, constant: 8.all).isActive = true
         
-        noteLabel.rightAnchor.constraint(equalTo: uploadDocsContainerView.rightAnchor, constant: -4).isActive = true
-        noteLabel.leftAnchor.constraint(equalTo: fileImageview.rightAnchor, constant: 8).isActive = true
+        
+        
+        businessLabel.leftAnchor.constraint(equalTo: businessTypeContainerView.leftAnchor, constant: 8.all).isActive = true
+        businessLabel.rightAnchor.constraint(equalTo: businessTypeContainerView.rightAnchor, constant: -8.all).isActive = true
+        businessLabel.topAnchor.constraint(equalTo: businessTypeContainerView.topAnchor, constant: 4.all).isActive = true
+        businessLabel.heightAnchor.constraint(equalToConstant: 42.all).isActive = true
+        
+        noteLabel.rightAnchor.constraint(equalTo: uploadDocsContainerView.rightAnchor, constant: -4.all).isActive = true
+        noteLabel.leftAnchor.constraint(equalTo: fileImageview.rightAnchor, constant: 8.all).isActive = true
         noteLabel.topAnchor.constraint(equalTo: uploadDocsContainerView.topAnchor).isActive = true
         noteLabel.bottomAnchor.constraint(equalTo: uploadDocsContainerView.bottomAnchor).isActive = true
         
         fileImageview.centerYAnchor.constraint(equalTo: uploadDocsContainerView.centerYAnchor).isActive = true
-        fileImageview.leftAnchor.constraint(equalTo: uploadDocsContainerView.leftAnchor, constant: 8).isActive = true
-        fileImageview.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        fileImageview.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        fileImageview.leftAnchor.constraint(equalTo: uploadDocsContainerView.leftAnchor, constant: 8.all).isActive = true
+        fileImageview.widthAnchor.constraint(equalToConstant: 50.all).isActive = true
+        fileImageview.heightAnchor.constraint(equalToConstant: 50.all).isActive = true
         
     
         
-        uploadDocsContainerView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -8).isActive = true
-        uploadDocsContainerView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 8).isActive = true
-        uploadDocsContainerView.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        uploadDocsContainerView.topAnchor.constraint(equalTo: passwordContainerView.bottomAnchor, constant: 8).isActive = true
+        uploadDocsContainerView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -8.all).isActive = true
+        uploadDocsContainerView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 8.all).isActive = true
+        uploadDocsContainerView.heightAnchor.constraint(equalToConstant: 80.all).isActive = true
+        uploadDocsContainerView.topAnchor.constraint(equalTo: businessTypeContainerView.bottomAnchor, constant: 8.all).isActive = true
         
         
-        passwordTextField.leftAnchor.constraint(equalTo: passwordContainerView.leftAnchor, constant: 8).isActive = true
+        passwordTextField.leftAnchor.constraint(equalTo: passwordContainerView.leftAnchor, constant: 8.all).isActive = true
         passwordTextField.rightAnchor.constraint(equalTo: passwordContainerView.rightAnchor).isActive = true
         passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor, constant: 0).isActive = true
-        passwordTextField.bottomAnchor.constraint(equalTo: passwordContainerView.bottomAnchor, constant: -4).isActive = true
+        passwordTextField.bottomAnchor.constraint(equalTo: passwordContainerView.bottomAnchor, constant: -4.all).isActive = true
         
-        passwordLabel.leftAnchor.constraint(equalTo: passwordContainerView.leftAnchor, constant: 8).isActive = true
-        passwordLabel.rightAnchor.constraint(equalTo: passwordContainerView.rightAnchor, constant: -8).isActive = true
-        passwordLabel.topAnchor.constraint(equalTo: passwordContainerView.topAnchor, constant: 4).isActive = true
-        passwordHeightConstraint =  passwordLabel.heightAnchor.constraint(equalToConstant: 42)
+        passwordLabel.leftAnchor.constraint(equalTo: passwordContainerView.leftAnchor, constant: 8.all).isActive = true
+        passwordLabel.rightAnchor.constraint(equalTo: passwordContainerView.rightAnchor, constant: -8.all).isActive = true
+        passwordLabel.topAnchor.constraint(equalTo: passwordContainerView.topAnchor, constant: 4.all).isActive = true
+        passwordHeightConstraint =  passwordLabel.heightAnchor.constraint(equalToConstant: 42.all)
         passwordHeightConstraint?.isActive = true
         
-        passwordContainerView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -8).isActive = true
-        passwordContainerView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 8).isActive = true
-        passwordContainerView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        passwordContainerView.topAnchor.constraint(equalTo: emailContainerView.bottomAnchor, constant: 8).isActive = true
+        passwordContainerView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -8.all).isActive = true
+        passwordContainerView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 8.all).isActive = true
+        passwordContainerView.heightAnchor.constraint(equalToConstant: 50.all).isActive = true
+        passwordContainerView.topAnchor.constraint(equalTo: emailContainerView.bottomAnchor, constant: 8.all).isActive = true
         
         
-        emailTextField.leftAnchor.constraint(equalTo: emailContainerView.leftAnchor, constant: 8).isActive = true
+        emailTextField.leftAnchor.constraint(equalTo: emailContainerView.leftAnchor, constant: 8.all).isActive = true
         emailTextField.rightAnchor.constraint(equalTo: emailContainerView.rightAnchor).isActive = true
         emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 0).isActive = true
-        emailTextField.bottomAnchor.constraint(equalTo: emailContainerView.bottomAnchor, constant: -4).isActive = true
+        emailTextField.bottomAnchor.constraint(equalTo: emailContainerView.bottomAnchor, constant: -4.all).isActive = true
         
         
-        emailLabel.leftAnchor.constraint(equalTo: emailContainerView.leftAnchor, constant: 8).isActive = true
-        emailLabel.rightAnchor.constraint(equalTo: emailContainerView.rightAnchor, constant: -8).isActive = true
-        emailLabel.topAnchor.constraint(equalTo: emailContainerView.topAnchor, constant: 4).isActive = true
-        emailHeightConstraint =  emailLabel.heightAnchor.constraint(equalToConstant: 42)
+        emailLabel.leftAnchor.constraint(equalTo: emailContainerView.leftAnchor, constant: 8.all).isActive = true
+        emailLabel.rightAnchor.constraint(equalTo: emailContainerView.rightAnchor, constant: -8.all).isActive = true
+        emailLabel.topAnchor.constraint(equalTo: emailContainerView.topAnchor, constant: 4.all).isActive = true
+        emailHeightConstraint =  emailLabel.heightAnchor.constraint(equalToConstant: 42.all)
         emailHeightConstraint?.isActive = true
         
-        emailContainerView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -8).isActive = true
-        emailContainerView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 8).isActive = true
-        emailContainerView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        emailContainerView.topAnchor.constraint(equalTo: companyContainerView.bottomAnchor, constant: 8).isActive = true
+        emailContainerView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -8.all).isActive = true
+        emailContainerView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 8.all).isActive = true
+        emailContainerView.heightAnchor.constraint(equalToConstant: 50.all).isActive = true
+        emailContainerView.topAnchor.constraint(equalTo: companyContainerView.bottomAnchor, constant: 8.all).isActive = true
         
         
-        
-        
-        
-        companyContainerView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -8).isActive = true
-        companyContainerView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 8).isActive = true
-        companyContainerView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        companyContainerView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 78).isActive = true
+        companyContainerView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -8.all).isActive = true
+        companyContainerView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 8.all).isActive = true
+        companyContainerView.heightAnchor.constraint(equalToConstant: 50.all).isActive = true
+        companyContainerView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 78.all).isActive = true
         
       
-        companyTextField.leftAnchor.constraint(equalTo: companyContainerView.leftAnchor, constant: 8).isActive = true
+        companyTextField.leftAnchor.constraint(equalTo: companyContainerView.leftAnchor, constant: 8.all).isActive = true
         companyTextField.rightAnchor.constraint(equalTo: companyContainerView.rightAnchor).isActive = true
         companyTextField.topAnchor.constraint(equalTo: companyTitleLabel.bottomAnchor, constant: 0).isActive = true
-        companyTextField.bottomAnchor.constraint(equalTo: companyContainerView.bottomAnchor, constant: -4).isActive = true
+        companyTextField.bottomAnchor.constraint(equalTo: companyContainerView.bottomAnchor, constant: -4.all).isActive = true
         
         
-        companyTitleLabel.leftAnchor.constraint(equalTo: companyContainerView.leftAnchor, constant: 8).isActive = true
-        companyTitleLabel.rightAnchor.constraint(equalTo: companyContainerView.rightAnchor, constant: -8).isActive = true
-        companyTitleLabel.topAnchor.constraint(equalTo: companyContainerView.topAnchor, constant: 4).isActive = true
-        companyHeightConstraint =  companyTitleLabel.heightAnchor.constraint(equalToConstant: 42)
+        companyTitleLabel.leftAnchor.constraint(equalTo: companyContainerView.leftAnchor, constant: 8.all).isActive = true
+        companyTitleLabel.rightAnchor.constraint(equalTo: companyContainerView.rightAnchor, constant: -8.all).isActive = true
+        companyTitleLabel.topAnchor.constraint(equalTo: companyContainerView.topAnchor, constant: 4.all).isActive = true
+        companyHeightConstraint =  companyTitleLabel.heightAnchor.constraint(equalToConstant: 42.all)
         companyHeightConstraint?.isActive = true
         
         profileImageView.centerYAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
-        profileImageView.widthAnchor.constraint(equalToConstant: 120).isActive = true
-        profileImageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        profileImageView.widthAnchor.constraint(equalToConstant: 120.all).isActive = true
+        profileImageView.heightAnchor.constraint(equalToConstant: 120.all).isActive = true
         profileImageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true 
         
-        containerView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
-        containerView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15).isActive = true
-        containerView.heightAnchor.constraint(equalToConstant: 360).isActive = true
-        containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50).isActive = true
+        containerView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15.all).isActive = true
+        containerView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 15.all).isActive = true
+        containerView.heightAnchor.constraint(equalToConstant: 400.all).isActive = true
+        containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -50.all).isActive = true
         
         MyConstraints.sharedInstance.pinConstraints(motherView: view, viewToPin: backgroundImageView, leftMargin: 0, rightMargin: 0, topMargin: 0, bottomMargin: 0)
     }
     
 
 
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
+}
+
+
+
+extension SignUpViewController: CitySelectedDelegate {
+    func selectedBusiness(business: String, type: BusinessType) {
+        self.businessLabel.text = business
+        self.businessLabel.alpha = 1
+        self.businessType = type
+    }
+
+    func dismissSelf() {
+        self.handleDismiss()
+    }
+    
+    
 }

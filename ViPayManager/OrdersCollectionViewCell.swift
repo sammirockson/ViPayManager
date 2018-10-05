@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Parse
 
 class OrdersCollectionViewCell: UICollectionViewCell {
+    
+    var order: PFObject!
     
     let containerView: UIView = {
         let v = UIView()
@@ -62,6 +65,8 @@ class OrdersCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+   
+    
     func setUpViews(){
         
         let frame = self.frame
@@ -70,12 +75,12 @@ class OrdersCollectionViewCell: UICollectionViewCell {
         self.addSubview(acceptOrderButton)
         self.addSubview(declineOrderButton)
         
-        MyConstraints.sharedInstance.pinWithHeight(motherView: self, viewToPin: declineOrderButton, leftMargin: 0, rightMargin: nil, topMargin: nil, bottomMargin: -20, height: 50, width: frame.width / 3)
+        MyConstraints.sharedInstance.pinWithHeight(motherView: self, viewToPin: declineOrderButton, leftMargin: 0, rightMargin: nil, topMargin: nil, bottomMargin: -20.all, height: 50.all, width: frame.width / 3)
         
         
-        MyConstraints.sharedInstance.pinWithHeight(motherView: self, viewToPin: acceptOrderButton, leftMargin: nil, rightMargin: 0, topMargin: nil, bottomMargin: -20, height: 50, width: ((frame.width / 3) * 2) - 8)
+        MyConstraints.sharedInstance.pinWithHeight(motherView: self, viewToPin: acceptOrderButton, leftMargin: nil, rightMargin: 0, topMargin: nil, bottomMargin: -20.all, height: 50.all, width: ((frame.width / 3) * 2) - 8)
         
-        MyConstraints.sharedInstance.pinConstraints(motherView: self, viewToPin: containerView, leftMargin: 0, rightMargin: 0, topMargin: 0, bottomMargin: -80)
+        MyConstraints.sharedInstance.pinConstraints(motherView: self, viewToPin: containerView, leftMargin: 0, rightMargin: 0, topMargin: 0, bottomMargin: -80.all)
         
     }
     

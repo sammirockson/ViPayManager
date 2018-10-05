@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Parse
+import Kingfisher
 
 class ShopCollectionViewCell: UICollectionViewCell {
     
@@ -91,6 +93,24 @@ class ShopCollectionViewCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    func processAndDisplay(object: PFObject){
+
+        let fileOne = object.object(forKey: "fileOne") as? PFFile
+        let stringURL = fileOne?.url
+        let url = URL(string: stringURL!)
+        thumbnailImageView.kf.setImage(with: url, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+        
+        let price = object.object(forKey: "price") as? String
+        self.priceLabel.text = "Ghc \(price!)"
+        
+        let description = object.object(forKey: "description") as? String
+        self.foodNameLabel.text = description
+        
+        let searchTags = object.object(forKey: "searchTags") as? String
+        self.searchTagsLabel.text = searchTags
     }
     
     func setUpViews(){

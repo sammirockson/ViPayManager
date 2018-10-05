@@ -9,9 +9,101 @@
 import Foundation
 import UIKit
 
+
+extension UIImage {
+    /// 更改图片颜色
+    public func imageWithTintColor(color : UIColor) -> UIImage{
+        
+        UIGraphicsBeginImageContext(self.size)
+        color.setFill()
+        let bounds = CGRect.init(x: 0, y: 0, width: self.size.width, height: self.size.height)
+        UIRectFill(bounds)
+        
+        self.draw(in: bounds, blendMode: CGBlendMode.destinationIn, alpha: 1.0)
+        
+        let tintedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return tintedImage!
+    }
+    
+}
+
+let deviceHeight = UIScreen.main.bounds.height
+var isCurvedDevice: Bool {
+    if deviceHeight > 800 {
+        return true
+    }else{
+        return false
+    }
+}
+
 enum ButtonStatus {
     case Enabled, Disabled, BlueDisabled
 }
+
+var adaptAllSizeScale: CGFloat = {
+    let scale = screenWidth / defaultWidth
+    return scale
+}()
+
+var adaptBigScreenSizeScale:CGFloat = {
+    var scale:CGFloat = 1.0
+    if screenWidth > defaultWidth {
+        scale = screenWidth / defaultWidth
+    }
+    
+    return scale
+}()
+
+
+var adaptBigScreenFontScale: CGFloat = {
+    var scale:CGFloat = 1.0
+    if screenWidth > defaultWidth {
+        scale = screenWidth / defaultWidth
+    }
+    
+    return scale
+}()
+
+var adaptAllFontScale: CGFloat = {
+    let scale = screenWidth / defaultWidth
+    return scale
+}()
+
+
+extension CGFloat {
+    var all: CGFloat {
+        return adaptAllSizeScale * CGFloat.init(self)
+    }
+    
+    var up: CGFloat {
+        return adaptBigScreenSizeScale * CGFloat.init(self)
+    }
+}
+
+extension Int {
+    var all: CGFloat {
+        return adaptAllSizeScale * CGFloat.init(self)
+    }
+    
+    var up: CGFloat {
+        return adaptBigScreenSizeScale * CGFloat.init(self)
+    }
+}
+
+extension Double {
+    var all: CGFloat {
+        return adaptAllSizeScale * CGFloat.init(self)
+    }
+    
+    var up: CGFloat {
+        return adaptBigScreenSizeScale * CGFloat.init(self)
+    }
+}
+
+
+let screenWidth: CGFloat = UIScreen.main.bounds.size.width
+let defaultWidth: CGFloat = 375.0
 
 
 extension Date {
@@ -38,45 +130,45 @@ extension String
     
 }
 
-extension UIDevice {
-    
-    var isIphoneX: Bool {
-        if #available(iOS 11.0, *), isIphone {
-            if isLandscape {
-                if let leftPadding = UIApplication.shared.keyWindow?.safeAreaInsets.left, leftPadding > 0 {
-                    return true
-                }
-                if let rightPadding = UIApplication.shared.keyWindow?.safeAreaInsets.right, rightPadding > 0 {
-                    return true
-                }
-            } else {
-                if let topPadding = UIApplication.shared.keyWindow?.safeAreaInsets.top, topPadding > 0 {
-                    return true
-                }
-                if let bottomPadding = UIApplication.shared.keyWindow?.safeAreaInsets.bottom, bottomPadding > 0 {
-                    return true
-                }
-            }
-        }
-        return false
-    }
-    
-    var isLandscape: Bool {
-        return UIDeviceOrientationIsLandscape(orientation) || UIInterfaceOrientationIsLandscape(UIApplication.shared.statusBarOrientation)
-    }
-    
-    var isPortrait: Bool {
-        return UIDeviceOrientationIsPortrait(orientation) || UIInterfaceOrientationIsPortrait(UIApplication.shared.statusBarOrientation)
-    }
-    
-    var isIphone: Bool {
-        return self.userInterfaceIdiom == .phone
-    }
-    
-    var isIpad: Bool {
-        return self.userInterfaceIdiom == .pad
-    }
-}
+//extension UIDevice {
+//
+//    var isIphoneX: Bool {
+//        if #available(iOS 11.0, *), isIphone {
+//            if isLandscape {
+//                if let leftPadding = UIApplication.shared.keyWindow?.safeAreaInsets.left, leftPadding > 0 {
+//                    return true
+//                }
+//                if let rightPadding = UIApplication.shared.keyWindow?.safeAreaInsets.right, rightPadding > 0 {
+//                    return true
+//                }
+//            } else {
+//                if let topPadding = UIApplication.shared.keyWindow?.safeAreaInsets.top, topPadding > 0 {
+//                    return true
+//                }
+//                if let bottomPadding = UIApplication.shared.keyWindow?.safeAreaInsets.bottom, bottomPadding > 0 {
+//                    return true
+//                }
+//            }
+//        }
+//        return false
+//    }
+//
+//    var isLandscape: Bool {
+//        return orientation.isLandscape || UIApplication.shared.statusBarOrientation.isLandscape
+//    }
+//
+//    var isPortrait: Bool {
+//        return orientation.isPortrait || UIApplication.shared.statusBarOrientation.isPortrait
+//    }
+//
+//    var isIphone: Bool {
+//        return self.userInterfaceIdiom == .phone
+//    }
+//
+//    var isIpad: Bool {
+//        return self.userInterfaceIdiom == .pad
+//    }
+//}
 
 extension UIButton{
     func style(with status: ButtonStatus, and title: String){
@@ -157,22 +249,6 @@ extension UIView{
 }
 
 
-extension UIImage {
-    /// 更改图片颜色
-    public func imageWithTintColor(color : UIColor) -> UIImage{
-        
-        UIGraphicsBeginImageContext(self.size)
-        color.setFill()
-        let bounds = CGRect.init(x: 0, y: 0, width: self.size.width, height: self.size.height)
-        UIRectFill(bounds)
-        
-        self.draw(in: bounds, blendMode: CGBlendMode.destinationIn, alpha: 1.0)
-        
-        let tintedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return tintedImage!
-    }
-    
-}
+
 
 

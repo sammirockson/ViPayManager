@@ -52,6 +52,22 @@
 		DDB230DE2132D99600FE4F38 /* CustomAlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230DD2132D99600FE4F38 /* CustomAlertsView.swift */; };
 		DDB230E02132DDE900FE4F38 /* VerifyPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230DF2132DDE900FE4F38 /* VerifyPhoneViewController.swift */; };
 		DDB230E22132EAD100FE4F38 /* EnterCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230E12132EAD100FE4F38 /* EnterCodeViewController.swift */; };
+		DDDA6666213BC33700486003 /* FoodCategoryContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDA6665213BC33700486003 /* FoodCategoryContainerView.swift */; };
+		DDDA6668213BCB4A00486003 /* FoodCategoriesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDA6667213BCB4A00486003 /* FoodCategoriesViewCell.swift */; };
+		DDDA666A213BD7FB00486003 /* SelectSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDA6669213BD7FB00486003 /* SelectSizeViewController.swift */; };
+		DDDA666C213C45BD00486003 /* SelectSizeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDA666B213C45BD00486003 /* SelectSizeCollectionViewCell.swift */; };
+		DDEA5F712164B25D004DE089 /* SelectorContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA5F702164B25C004DE089 /* SelectorContainerView.swift */; };
+		DDEA5F732164C967004DE089 /* AddHotelServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA5F722164C967004DE089 /* AddHotelServiceViewController.swift */; };
+		DDEA5F752164E932004DE089 /* WaitingPickUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA5F742164E932004DE089 /* WaitingPickUpViewController.swift */; };
+		DDEA5F7721654386004DE089 /* CompleteHotelAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA5F7621654386004DE089 /* CompleteHotelAddViewController.swift */; };
+		DDEA5F7F216547F6004DE089 /* AvailableRoomItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA5F7E216547F6004DE089 /* AvailableRoomItems.swift */; };
+		DDEA5F81216548A4004DE089 /* AttachmentItemsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA5F80216548A4004DE089 /* AttachmentItemsCollectionViewCell.swift */; };
+		DDEA5F8421655558004DE089 /* SelectedMediaViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA5F8221655557004DE089 /* SelectedMediaViewCell.swift */; };
+		DDEA5F8521655558004DE089 /* SelectedMediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA5F8321655558004DE089 /* SelectedMediaView.swift */; };
+		DDEA5F8B2165AF4B004DE089 /* PickItemsContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA5F8A2165AF4B004DE089 /* PickItemsContainerView.swift */; };
+		DDEA5F9B2167A2D6004DE089 /* AddHouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA5F9A2167A2D6004DE089 /* AddHouseViewController.swift */; };
+		DDEA5F9D2167AACD004DE089 /* SelectAmenitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEA5F9C2167AACD004DE089 /* SelectAmenitiesView.swift */; };
+		DDEA5F9F2167BDFA004DE089 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDEA5F9E2167BDFA004DE089 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +144,22 @@
 		DDB230DD2132D99600FE4F38 /* CustomAlertsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertsView.swift; sourceTree = "<group>"; };
 		DDB230DF2132DDE900FE4F38 /* VerifyPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneViewController.swift; sourceTree = "<group>"; };
 		DDB230E12132EAD100FE4F38 /* EnterCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeViewController.swift; sourceTree = "<group>"; };
+		DDDA6665213BC33700486003 /* FoodCategoryContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoryContainerView.swift; sourceTree = "<group>"; };
+		DDDA6667213BCB4A00486003 /* FoodCategoriesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoriesViewCell.swift; sourceTree = "<group>"; };
+		DDDA6669213BD7FB00486003 /* SelectSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSizeViewController.swift; sourceTree = "<group>"; };
+		DDDA666B213C45BD00486003 /* SelectSizeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSizeCollectionViewCell.swift; sourceTree = "<group>"; };
+		DDEA5F702164B25C004DE089 /* SelectorContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectorContainerView.swift; sourceTree = "<group>"; };
+		DDEA5F722164C967004DE089 /* AddHotelServiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHotelServiceViewController.swift; sourceTree = "<group>"; };
+		DDEA5F742164E932004DE089 /* WaitingPickUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingPickUpViewController.swift; sourceTree = "<group>"; };
+		DDEA5F7621654386004DE089 /* CompleteHotelAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteHotelAddViewController.swift; sourceTree = "<group>"; };
+		DDEA5F7E216547F6004DE089 /* AvailableRoomItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableRoomItems.swift; sourceTree = "<group>"; };
+		DDEA5F80216548A4004DE089 /* AttachmentItemsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentItemsCollectionViewCell.swift; sourceTree = "<group>"; };
+		DDEA5F8221655557004DE089 /* SelectedMediaViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedMediaViewCell.swift; sourceTree = "<group>"; };
+		DDEA5F8321655558004DE089 /* SelectedMediaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedMediaView.swift; sourceTree = "<group>"; };
+		DDEA5F8A2165AF4B004DE089 /* PickItemsContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickItemsContainerView.swift; sourceTree = "<group>"; };
+		DDEA5F9A2167A2D6004DE089 /* AddHouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHouseViewController.swift; sourceTree = "<group>"; };
+		DDEA5F9C2167AACD004DE089 /* SelectAmenitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAmenitiesView.swift; sourceTree = "<group>"; };
+		DDEA5F9E2167BDFA004DE089 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E02FB9BAA3F85A20C71E8E8E /* Pods_ViPayManagerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ViPayManagerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -225,8 +257,20 @@
 				DD33A3D5213534F2005D9CE5 /* AddProductsViewController.swift */,
 				DD33A3D721353F7A005D9CE5 /* ProductsImagesContainerView.swift */,
 				DD33A3D9213542E6005D9CE5 /* AddProductsImagesViewCell.swift */,
+				DDDA6665213BC33700486003 /* FoodCategoryContainerView.swift */,
+				DDDA6667213BCB4A00486003 /* FoodCategoriesViewCell.swift */,
+				DDDA6669213BD7FB00486003 /* SelectSizeViewController.swift */,
+				DDDA666B213C45BD00486003 /* SelectSizeCollectionViewCell.swift */,
+				DDEA5F702164B25C004DE089 /* SelectorContainerView.swift */,
+				DDEA5F722164C967004DE089 /* AddHotelServiceViewController.swift */,
+				DDEA5F7621654386004DE089 /* CompleteHotelAddViewController.swift */,
+				DDEA5F9A2167A2D6004DE089 /* AddHouseViewController.swift */,
+				DDEA5F742164E932004DE089 /* WaitingPickUpViewController.swift */,
+				DDEA5F9C2167AACD004DE089 /* SelectAmenitiesView.swift */,
 				DDB230A421318E9D00FE4F38 /* RGB.swift */,
 				DDB230D32132863100FE4F38 /* Network.swift */,
+				DDEA5F8321655558004DE089 /* SelectedMediaView.swift */,
+				DDEA5F8221655557004DE089 /* SelectedMediaViewCell.swift */,
 				DDB230AA2131910A00FE4F38 /* Extensions.swift */,
 				DDB230AE213193E900FE4F38 /* MyConstraints.swift */,
 				DDB230C42131958500FE4F38 /* FontNames.swift */,
@@ -234,9 +278,13 @@
 				DDB230C92132319300FE4F38 /* ConfirmOrderCollectionViewCell.swift */,
 				DDB230CB2132319300FE4F38 /* ConfirmOrderViewController.swift */,
 				DDB230CC2132319400FE4F38 /* Food.swift */,
+				DDEA5F7E216547F6004DE089 /* AvailableRoomItems.swift */,
+				DDEA5F80216548A4004DE089 /* AttachmentItemsCollectionViewCell.swift */,
+				DDEA5F8A2165AF4B004DE089 /* PickItemsContainerView.swift */,
 				DDB230C62131959800FE4F38 /* Fonts */,
 				DDB2307B21318DDA00FE4F38 /* Assets.xcassets */,
 				DDB2307D21318DDA00FE4F38 /* LaunchScreen.storyboard */,
+				DDEA5F9E2167BDFA004DE089 /* GoogleService-Info.plist */,
 				DDB2308021318DDA00FE4F38 /* Info.plist */,
 				DDB2307821318DD800FE4F38 /* ViPayManager.xcdatamodeld */,
 			);
@@ -290,6 +338,7 @@
 				DDB2306B21318DD800FE4F38 /* Frameworks */,
 				DDB2306C21318DD800FE4F38 /* Resources */,
 				BE55C583BE4BB2710F11E8D5 /* [CP] Embed Pods Frameworks */,
+				C916898E107BB26D1479652F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -350,13 +399,16 @@
 				TargetAttributes = {
 					DDB2306D21318DD800FE4F38 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 					};
 					DDB2308421318DDA00FE4F38 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = DDB2306D21318DD800FE4F38;
 					};
 					DDB2308F21318DDA00FE4F38 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1000;
 						TestTargetID = DDB2306D21318DD800FE4F38;
 					};
 				};
@@ -386,6 +438,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDEA5F9F2167BDFA004DE089 /* GoogleService-Info.plist in Resources */,
 				DDB230BF2131956D00FE4F38 /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				DDB230BD2131956D00FE4F38 /* OpenSans-Light.ttf in Resources */,
 				DDB230BA2131956D00FE4F38 /* OpenSans-Italic.ttf in Resources */,
@@ -486,6 +539,7 @@
 				"${BUILT_PRODUCTS_DIR}/OpalImagePicker/OpalImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -497,11 +551,34 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpalImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ViPayManager/Pods-ViPayManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C916898E107BB26D1479652F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ViPayManager/Pods-ViPayManager-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ViPayManager/Pods-ViPayManager-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -514,19 +591,29 @@
 				DDB230E22132EAD100FE4F38 /* EnterCodeViewController.swift in Sources */,
 				DDB230CD2132319400FE4F38 /* ConfirmOrderCollectionViewCell.swift in Sources */,
 				DDB230E02132DDE900FE4F38 /* VerifyPhoneViewController.swift in Sources */,
+				DDEA5F712164B25D004DE089 /* SelectorContainerView.swift in Sources */,
+				DDEA5F9D2167AACD004DE089 /* SelectAmenitiesView.swift in Sources */,
+				DDEA5F7721654386004DE089 /* CompleteHotelAddViewController.swift in Sources */,
 				DDB230A521318E9E00FE4F38 /* RGB.swift in Sources */,
+				DDEA5F81216548A4004DE089 /* AttachmentItemsCollectionViewCell.swift in Sources */,
+				DDDA6668213BCB4A00486003 /* FoodCategoriesViewCell.swift in Sources */,
+				DDEA5F7F216547F6004DE089 /* AvailableRoomItems.swift in Sources */,
 				DDB230D02132319400FE4F38 /* Food.swift in Sources */,
 				DDB230A721318EF700FE4F38 /* OrdersViewController.swift in Sources */,
 				DDB2307221318DD800FE4F38 /* AppDelegate.swift in Sources */,
+				DDDA6666213BC33700486003 /* FoodCategoryContainerView.swift in Sources */,
 				DD33A3D821353F7A005D9CE5 /* ProductsImagesContainerView.swift in Sources */,
 				DDB230A321318E7500FE4F38 /* CustomTabBarController.swift in Sources */,
 				DDB230A921318F5A00FE4F38 /* ShopViewController.swift in Sources */,
 				DDB230D82132915900FE4F38 /* SignUpViewController.swift in Sources */,
 				DDB230DE2132D99600FE4F38 /* CustomAlertsView.swift in Sources */,
+				DDEA5F8B2165AF4B004DE089 /* PickItemsContainerView.swift in Sources */,
 				DD33A3DA213542E6005D9CE5 /* AddProductsImagesViewCell.swift in Sources */,
 				DDB230DA2132D4CD00FE4F38 /* DarkOverLay.swift in Sources */,
 				DDB230C52131958500FE4F38 /* FontNames.swift in Sources */,
 				DDB230D221323D3F00FE4F38 /* ShopCollectionViewCell.swift in Sources */,
+				DDEA5F8421655558004DE089 /* SelectedMediaViewCell.swift in Sources */,
+				DDEA5F732164C967004DE089 /* AddHotelServiceViewController.swift in Sources */,
 				DDB230C82131A51300FE4F38 /* OrdersCollectionViewCell.swift in Sources */,
 				DD33A3D421352965005D9CE5 /* OptimizedFont.swift in Sources */,
 				DDB230D42132863200FE4F38 /* Network.swift in Sources */,
@@ -534,11 +621,16 @@
 				DDB230AD2131928700FE4F38 /* OrdersHeaderCollectionReusableView.swift in Sources */,
 				DDB230D621328D7900FE4F38 /* LandingPageViewController.swift in Sources */,
 				DDB2307A21318DD800FE4F38 /* ViPayManager.xcdatamodeld in Sources */,
+				DDEA5F752164E932004DE089 /* WaitingPickUpViewController.swift in Sources */,
 				DDB230AF213193E900FE4F38 /* MyConstraints.swift in Sources */,
+				DDDA666A213BD7FB00486003 /* SelectSizeViewController.swift in Sources */,
+				DDDA666C213C45BD00486003 /* SelectSizeCollectionViewCell.swift in Sources */,
 				DDB230AB2131910A00FE4F38 /* Extensions.swift in Sources */,
 				DDB230DC2132D55F00FE4F38 /* Alerts.swift in Sources */,
 				DD33A3D6213534F2005D9CE5 /* AddProductsViewController.swift in Sources */,
+				DDEA5F8521655558004DE089 /* SelectedMediaView.swift in Sources */,
 				DDB230CE2132319400FE4F38 /* ConfirmOrderCollectionReusableView.swift in Sources */,
+				DDEA5F9B2167A2D6004DE089 /* AddHouseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,7 +806,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.RockzAppStudio.ViPayManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -734,7 +826,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.RockzAppStudio.ViPayManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -755,7 +847,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.RockzAppStudio.ViPayManagerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ViPayManager.app/ViPayManager";
 			};
@@ -777,7 +869,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.RockzAppStudio.ViPayManagerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ViPayManager.app/ViPayManager";
 			};
@@ -798,7 +890,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.RockzAppStudio.ViPayManagerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = ViPayManager;
 			};
@@ -819,7 +911,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.RockzAppStudio.ViPayManagerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = ViPayManager;
 			};

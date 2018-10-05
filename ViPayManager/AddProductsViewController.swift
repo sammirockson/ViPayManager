@@ -7,8 +7,20 @@
 //
 
 import UIKit
+import SnapKit
+import Parse
 
-class AddProductsViewController: UIViewController {
+class Product: NSObject {
+    var price: String = ""
+    var searchTag: String = ""
+    var descrip: String = ""
+    var category: String = ""
+    var shop: PFUser!
+    var name: String = ""
+    var images: [UIImage]!
+}
+
+class AddProductsViewController: UIViewController, UITextFieldDelegate {
     
     
     let customNavContainerView: UIImageView = {
@@ -65,7 +77,7 @@ class AddProductsViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = OptimizedFont.font(fontName: FontNames.OpenSansRegular, fontSize: 14)
         label.textColor = RGB.sharedInstance.requiredColor(r: 12, g: 0, b: 51, alpha: 1.0)
-//        label.delegate = self
+        label.delegate = self
         label.autocorrectionType = .no
         label.returnKeyType = .done
         label.placeholder = "E.g 5"
@@ -111,8 +123,9 @@ class AddProductsViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.setTitleColor(.white, for: .normal)
         label.titleLabel?.font = OptimizedFont.font(fontName: FontNames.OpenSansSemiBold, fontSize: 18)
-        label.setTitle("Post", for: .normal)
+        label.setTitle("Next", for: .normal)
         label.isUserInteractionEnabled = true
+        label.addTarget(self, action: #selector(handleNextButtonTapped), for: .touchUpInside)
         return label
     }()
     
@@ -125,6 +138,16 @@ class AddProductsViewController: UIViewController {
         return v
     }()
     
+    lazy var searchTagsTextField: UITextField = {
+        let label = UITextField()
+        label.font = OptimizedFont.font(fontName: FontNames.OpenSansRegular, fontSize: 14)
+        label.textColor = RGB.sharedInstance.requiredColor(r: 12, g: 0, b: 51, alpha: 1.0)
+        label.autocorrectionType = .no
+        label.returnKeyType = .done
+        label.placeholder = "Search tags e.g milk, bag, iPhone X"
+        return label
+    }()
+    
     lazy var categoryContainerView: UIView = {
         let v = UIView()
         v.translatesAutoresizingMaskIntoConstraints = false
@@ -134,14 +157,17 @@ class AddProductsViewController: UIViewController {
         return v
     }()
     
+    let categoryTitle = "Food Category"
+    
     lazy var categoryTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = RGB.sharedInstance.requiredColor(r: 12, g: 0, b: 51, alpha: 1.0)
         label.alpha = 0.65
         label.font = OptimizedFont.font(fontName: FontNames.OpenSansRegular, fontSize: 14)
-        label.text = "Food Category"
+        label.text = categoryTitle
         label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectFoodCategory)))
         return label
     }()
     
@@ -154,14 +180,38 @@ class AddProductsViewController: UIViewController {
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
+    
+    lazy var frame = view.frame
+
+    lazy var foodCategoryView: FoodCategoryContainerView = {
+        let v = FoodCategoryContainerView(frame: CGRect(x: 0, y: frame.height, width: frame.width, height: 300))
+        v.backgroundColor = .blue
+        v.motherVC = self
+        return v
+    }()
+    
+    lazy var coverView: UIView = {
+        let v = UIView(frame: view.bounds)
+        v.backgroundColor = UIColor(white: 0.1, alpha: 0.5)
+        v.alpha = 0
+        return v
+    }()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.white
         setUpViews()
+        
+        view.addSubview(coverView)
+        view.addSubview(foodCategoryView)
+
 
     }
+
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -171,6 +221,90 @@ class AddProductsViewController: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.isNavigationBarHidden = true
+        
+    }
+    
+    @objc func handleNextButtonTapped(){
+        
+        
+        if categoryTitleLabel.text! == categoryTitle {
+            Alerts.shareInstance.alertDisplay(vc: self, reason: "Please select category")
+            return
+        }
+        
+        if (searchTagsTextField.text?.isEmpty)! {
+            Alerts.shareInstance.alertDisplay(vc: self, reason: "Please enter search tag. It helps users find your product.")
+            return
+        }
+        
+        if (priceTextField.text?.isEmpty)!{
+            Alerts.shareInstance.alertDisplay(vc: self, reason: "Please enter price. Don't want money?")
+            return
+        }
+        
+        if descripTextView.text.isEmpty {
+            Alerts.shareInstance.alertDisplay(vc: self, reason: "Please add product description.")
+            return
+        }
+        
+        let images = self.displayImagesContainerView.arrayOfImages
+        if images.count == 1 {
+            Alerts.shareInstance.alertDisplay(vc: self, reason: "Please select product images.")
+            return
+        }
+        
+        let category = self.categoryTitle
+        let price = self.priceTextField.text!
+        let tags = self.searchTagsTextField.text!
+        let desc = self.descripTextView.text!
+        let shop = PFUser.current()
+        
+        let prod = Product()
+        prod.shop = shop
+        prod.searchTag = tags
+        prod.descrip = desc
+        prod.category = category
+        prod.price = price
+        prod.images = images
+        prod.name = "No Nmae at the moment"
+        
+        let nextVC = SelectSizeViewController()
+        nextVC.product = prod
+        navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    @objc func handleDismiss(){
+        
+        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.foodCategoryView.frame = CGRect(x: 0, y: self.frame.height, width: self.frame.width, height: 300)
+            self.view.layoutIfNeeded()
+            self.coverView.alpha = 0
+            
+        }) { (completed) in
+            
+            
+        }
+        
+    }
+    
+    @objc func handleSelectFoodCategory(){
+        
+        self.view.addSubview(foodCategoryView)
+        
+        
+        coverView.isUserInteractionEnabled = true
+        self.coverView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleDismiss)))
+        
+        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            
+            self.coverView.alpha = 1
+            self.foodCategoryView.frame = CGRect(x: 0, y: self.frame.height - 300, width: self.frame.width, height: 300)
+            self.view.layoutIfNeeded()
+
+        }) { (completed) in
+            
+        }
+        
         
     }
     
@@ -191,6 +325,24 @@ class AddProductsViewController: UIViewController {
         
     }
     
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let text = textField.text
+        
+        if (text?.contains("."))! && string == "." || text?.utf8.count == 0 && string == "."{
+            return false
+        }else{
+            
+            let maxLength = 10
+            
+            let currentString: NSString = textField.text! as NSString
+            let newString: NSString =
+                currentString.replacingCharacters(in: range, with: string) as NSString
+            return newString.length <= maxLength
+        }
+    }
+    
     func setUpViews(){
         
         view.addSubview(customNavContainerView)
@@ -204,6 +356,14 @@ class AddProductsViewController: UIViewController {
         priceContainerView.addSubview(priceTextField)
         
         view.addSubview(searchTagsContainerView)
+        searchTagsContainerView.addSubview(searchTagsTextField)
+        
+        searchTagsTextField.snp.makeConstraints { (make) in
+            make.height.equalToSuperview()
+            make.left.equalToSuperview().offset(8)
+            make.right.equalToSuperview().offset(-8)
+            make.centerY.equalToSuperview()
+        }
         
         
         searchTagsContainerView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -15).isActive = true
@@ -282,14 +442,10 @@ class AddProductsViewController: UIViewController {
         
         
         postButton.rightAnchor.constraint(equalTo: customNavContainerView.rightAnchor, constant: -15).isActive = true
-        if UIDevice.current.isIphoneX {
-            
+        if isCurvedDevice {
             postButton.centerYAnchor.constraint(equalTo: customNavContainerView.centerYAnchor, constant: 15).isActive = true
-            
         }else{
-            
             postButton.centerYAnchor.constraint(equalTo: customNavContainerView.centerYAnchor, constant: 10).isActive = true
-            
         }
         postButton.widthAnchor.constraint(equalToConstant: 44).isActive = true
         postButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
@@ -297,14 +453,10 @@ class AddProductsViewController: UIViewController {
         
         
         backButton.leftAnchor.constraint(equalTo: customNavContainerView.leftAnchor, constant: 15).isActive = true
-        if UIDevice.current.isIphoneX {
-            
+        if isCurvedDevice {
             backButton.centerYAnchor.constraint(equalTo: customNavContainerView.centerYAnchor, constant: 15).isActive = true
-
         }else{
-            
             backButton.centerYAnchor.constraint(equalTo: customNavContainerView.centerYAnchor, constant: 10).isActive = true
-
         }
         backButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
         backButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
@@ -312,19 +464,20 @@ class AddProductsViewController: UIViewController {
         customNavContainerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         customNavContainerView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         customNavContainerView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        if UIDevice.current.isIphoneX {
-            
+        if isCurvedDevice {
             customNavContainerView.heightAnchor.constraint(equalToConstant: 90).isActive = true
-            
-            
         }else{
-            
             customNavContainerView.heightAnchor.constraint(equalToConstant: 80).isActive = true
-            
         }
         
     }
 
     
 
+}
+
+
+extension AddProductsViewController {
+    
+    
 }

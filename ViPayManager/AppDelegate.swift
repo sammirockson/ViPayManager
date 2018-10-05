@@ -9,8 +9,11 @@
 import UIKit
 import CoreData
 import Parse
+import GoogleMaps
+import GooglePlaces
 
 let defaultAppColor = RGB.sharedInstance.requiredColor(r: 51, g: 34, b: 211, alpha: 1.0)
+let screenFrame = UIScreen.main.bounds
 
 
 @UIApplicationMain
@@ -20,41 +23,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        UINavigationBar.appearance().barTintColor = .white
-        UINavigationBar.appearance().tintColor = defaultAppColor
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: FontNames.OpenSansBold, size: 14)!]
-        UINavigationBar.appearance().isTranslucent = false
+//        UINavigationBar.appearance().barTintColor = .white
+//        UINavigationBar.appearance().tintColor = defaultAppColor
+//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont(name: FontNames.OpenSansBold, size: 14)!]
+//        UINavigationBar.appearance().isTranslucent = false
         
         UITabBar.appearance().tintColor = RGB.sharedInstance.requiredColor(r: 51, g: 34, b: 211, alpha: 1.0)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: FontNames.OpenSansSemiBold, size: 8)!], for: .normal)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: FontNames.OpenSansSemiBold, size: 8)!], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: FontNames.OpenSansSemiBold, size: 8)!], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: FontNames.OpenSansSemiBold, size: 8)!], for: .selected)
         
         Network.sharedInstance.initParse()
         
-        
-        
-        let obj = PFObject(className: "TestClass")
-        obj.setObject("Hello world from ViPayManager side", forKey: "subtitle")
-        obj.saveInBackground { (success, error) in
-            print(error?.localizedDescription as Any)
-            print(success)
-        }
-        
-        
         if PFUser.current() == nil {
-        
             window?.rootViewController = UINavigationController(rootViewController: LandingPageViewController())
-
         }else{
-
             window?.rootViewController = UINavigationController(rootViewController: CustomTabBarController())
-
         }
+        GMSServices.provideAPIKey("AIzaSyBx2V7El0JtLsi3Gw7bl2KDaOAlyKSs78s")
+        GMSPlacesClient.provideAPIKey("AIzaSyDKP_9FVscIh0eg02c1DRRCWWLJ6vQRKn8")
+        GMSServices.provideAPIKey("AIzaSyDKP_9FVscIh0eg02c1DRRCWWLJ6vQRKn8")
+        
+    
 
         
         return true
