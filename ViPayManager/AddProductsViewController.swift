@@ -20,7 +20,15 @@ class Product: NSObject {
     var images: [UIImage]!
 }
 
-class AddProductsViewController: UIViewController, UITextFieldDelegate {
+class AddProductsViewController: UIViewController, UITextFieldDelegate, SelectedItemDelegate {
+    func dismiss() {
+        self.handleDismiss()
+    }
+    
+    func selectedItem(item: String) {
+        self.categoryTitleLabel.text = item
+    }
+    
     
     
     let customNavContainerView: UIImageView = {
@@ -186,7 +194,7 @@ class AddProductsViewController: UIViewController, UITextFieldDelegate {
     lazy var foodCategoryView: FoodCategoryContainerView = {
         let v = FoodCategoryContainerView(frame: CGRect(x: 0, y: frame.height, width: frame.width, height: 300))
         v.backgroundColor = .blue
-        v.motherVC = self
+        v.delegate = self
         return v
     }()
     

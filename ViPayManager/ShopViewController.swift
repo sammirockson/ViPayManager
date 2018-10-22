@@ -113,9 +113,6 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 case .carRentals:
                     print("Hello world")
                     
-                case .service:
-                    print("Hello world")
-                    
                 case .housing:
                     print("Hello world")
                 }
@@ -178,7 +175,6 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     
     func updateShopInfo(){
-        
         let query = PFUser.query()
         query?.getObjectInBackground(withId: (currentUser?.objectId!)!, block: { (user, error) in
             
@@ -224,17 +220,12 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func updateShopStatus(status: Bool){
-        
         let currentUser = PFUser.current()
-        
         currentUser?.setObject(status, forKey: "isOpen")
         currentUser?.saveEventually({ (success, error) in
             if error == nil {
-                
                 print("shop updated successfully")
-                
             }else{
-                
                 print("shop updated with error \(String(describing: error?.localizedDescription))")
 
             }
@@ -259,12 +250,11 @@ class ShopViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 navigationController?.pushViewController(addProductsVC, animated: true)
             case .restaurant:
                 print("Hello world")
+                let addProductsVC = RestaurantsFoodsViewController()
+                addProductsVC.hidesBottomBarWhenPushed = true
+                navigationController?.pushViewController(addProductsVC, animated: true)
             case .carRentals:
                 print("Hello world")
-
-            case .service:
-                print("Hello world")
-                
             case .housing:
                 let addProductsVC = AddHouseViewController()
                 addProductsVC.hidesBottomBarWhenPushed = true

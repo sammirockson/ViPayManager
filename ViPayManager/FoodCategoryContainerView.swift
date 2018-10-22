@@ -19,6 +19,11 @@ enum FoodCategories {
     case Others
 }
 
+protocol SelectedItemDelegate: class {
+    func dismiss()
+    func selectedItem(item: String)
+}
+
 class FoodCategoryContainerView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     lazy var collectionView: UICollectionView = {
@@ -35,7 +40,9 @@ class FoodCategoryContainerView: UIView, UICollectionViewDataSource, UICollectio
         return cv
     }()
     
-    var motherVC: AddProductsViewController?
+    weak var delegate: SelectedItemDelegate?
+    
+//    var motherVC: AddProductsViewController?
     
     let arrayOfFoodCategories = ["Local", "Fast Food", "Beverage", "Drinks", "Snacks", "Fruits", "Bakery", "Others"]
     
@@ -76,8 +83,10 @@ class FoodCategoryContainerView: UIView, UICollectionViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let title = self.arrayOfFoodCategories[indexPath.item]
-        self.motherVC?.handleDismiss()
-        self.motherVC?.categoryTitleLabel.text = title
+        self.delegate?.selectedItem(item: title)
+        self.delegate?.dismiss()
+//        self.motherVC?.handleDismiss()
+//        self.motherVC?.categoryTitleLabel.text = title
 
     }
     

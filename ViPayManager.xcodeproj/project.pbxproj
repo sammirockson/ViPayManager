@@ -52,6 +52,11 @@
 		DDB230DE2132D99600FE4F38 /* CustomAlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230DD2132D99600FE4F38 /* CustomAlertsView.swift */; };
 		DDB230E02132DDE900FE4F38 /* VerifyPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230DF2132DDE900FE4F38 /* VerifyPhoneViewController.swift */; };
 		DDB230E22132EAD100FE4F38 /* EnterCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB230E12132EAD100FE4F38 /* EnterCodeViewController.swift */; };
+		DDBE55EB21691A62001F4ECE /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBE55EA21691A62001F4ECE /* ChatsTableViewController.swift */; };
+		DDBE55EE21691AD2001F4ECE /* BusinessChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBE55EC21691AD2001F4ECE /* BusinessChatTableViewController.swift */; };
+		DDBE55EF21691AD2001F4ECE /* BusinessChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBE55ED21691AD2001F4ECE /* BusinessChatTableViewCell.swift */; };
+		DDBE55F521691B59001F4ECE /* ChatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBE55F421691B59001F4ECE /* ChatsTableViewCell.swift */; };
+		DDBE55F9216995B6001F4ECE /* RestaurantsFoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBE55F8216995B6001F4ECE /* RestaurantsFoodsViewController.swift */; };
 		DDDA6666213BC33700486003 /* FoodCategoryContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDA6665213BC33700486003 /* FoodCategoryContainerView.swift */; };
 		DDDA6668213BCB4A00486003 /* FoodCategoriesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDA6667213BCB4A00486003 /* FoodCategoriesViewCell.swift */; };
 		DDDA666A213BD7FB00486003 /* SelectSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDA6669213BD7FB00486003 /* SelectSizeViewController.swift */; };
@@ -144,6 +149,11 @@
 		DDB230DD2132D99600FE4F38 /* CustomAlertsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAlertsView.swift; sourceTree = "<group>"; };
 		DDB230DF2132DDE900FE4F38 /* VerifyPhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneViewController.swift; sourceTree = "<group>"; };
 		DDB230E12132EAD100FE4F38 /* EnterCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCodeViewController.swift; sourceTree = "<group>"; };
+		DDBE55EA21691A62001F4ECE /* ChatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
+		DDBE55EC21691AD2001F4ECE /* BusinessChatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessChatTableViewController.swift; sourceTree = "<group>"; };
+		DDBE55ED21691AD2001F4ECE /* BusinessChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessChatTableViewCell.swift; sourceTree = "<group>"; };
+		DDBE55F421691B59001F4ECE /* ChatsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatsTableViewCell.swift; sourceTree = "<group>"; };
+		DDBE55F8216995B6001F4ECE /* RestaurantsFoodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsFoodsViewController.swift; sourceTree = "<group>"; };
 		DDDA6665213BC33700486003 /* FoodCategoryContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoryContainerView.swift; sourceTree = "<group>"; };
 		DDDA6667213BCB4A00486003 /* FoodCategoriesViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCategoriesViewCell.swift; sourceTree = "<group>"; };
 		DDDA6669213BD7FB00486003 /* SelectSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSizeViewController.swift; sourceTree = "<group>"; };
@@ -252,6 +262,11 @@
 				DDB230A621318EF700FE4F38 /* OrdersViewController.swift */,
 				DDB230C72131A51300FE4F38 /* OrdersCollectionViewCell.swift */,
 				DDB230AC2131928700FE4F38 /* OrdersHeaderCollectionReusableView.swift */,
+				DDBE55EA21691A62001F4ECE /* ChatsTableViewController.swift */,
+				DDBE55F421691B59001F4ECE /* ChatsTableViewCell.swift */,
+				DDBE55ED21691AD2001F4ECE /* BusinessChatTableViewCell.swift */,
+				DDBE55EC21691AD2001F4ECE /* BusinessChatTableViewController.swift */,
+				DDBE55F8216995B6001F4ECE /* RestaurantsFoodsViewController.swift */,
 				DDB230A821318F5A00FE4F38 /* ShopViewController.swift */,
 				DDB230D121323D3F00FE4F38 /* ShopCollectionViewCell.swift */,
 				DD33A3D5213534F2005D9CE5 /* AddProductsViewController.swift */,
@@ -589,6 +604,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDB230E22132EAD100FE4F38 /* EnterCodeViewController.swift in Sources */,
+				DDBE55EE21691AD2001F4ECE /* BusinessChatTableViewController.swift in Sources */,
 				DDB230CD2132319400FE4F38 /* ConfirmOrderCollectionViewCell.swift in Sources */,
 				DDB230E02132DDE900FE4F38 /* VerifyPhoneViewController.swift in Sources */,
 				DDEA5F712164B25D004DE089 /* SelectorContainerView.swift in Sources */,
@@ -596,6 +612,7 @@
 				DDEA5F7721654386004DE089 /* CompleteHotelAddViewController.swift in Sources */,
 				DDB230A521318E9E00FE4F38 /* RGB.swift in Sources */,
 				DDEA5F81216548A4004DE089 /* AttachmentItemsCollectionViewCell.swift in Sources */,
+				DDBE55EB21691A62001F4ECE /* ChatsTableViewController.swift in Sources */,
 				DDDA6668213BCB4A00486003 /* FoodCategoriesViewCell.swift in Sources */,
 				DDEA5F7F216547F6004DE089 /* AvailableRoomItems.swift in Sources */,
 				DDB230D02132319400FE4F38 /* Food.swift in Sources */,
@@ -607,11 +624,13 @@
 				DDB230A921318F5A00FE4F38 /* ShopViewController.swift in Sources */,
 				DDB230D82132915900FE4F38 /* SignUpViewController.swift in Sources */,
 				DDB230DE2132D99600FE4F38 /* CustomAlertsView.swift in Sources */,
+				DDBE55F9216995B6001F4ECE /* RestaurantsFoodsViewController.swift in Sources */,
 				DDEA5F8B2165AF4B004DE089 /* PickItemsContainerView.swift in Sources */,
 				DD33A3DA213542E6005D9CE5 /* AddProductsImagesViewCell.swift in Sources */,
 				DDB230DA2132D4CD00FE4F38 /* DarkOverLay.swift in Sources */,
 				DDB230C52131958500FE4F38 /* FontNames.swift in Sources */,
 				DDB230D221323D3F00FE4F38 /* ShopCollectionViewCell.swift in Sources */,
+				DDBE55F521691B59001F4ECE /* ChatsTableViewCell.swift in Sources */,
 				DDEA5F8421655558004DE089 /* SelectedMediaViewCell.swift in Sources */,
 				DDEA5F732164C967004DE089 /* AddHotelServiceViewController.swift in Sources */,
 				DDB230C82131A51300FE4F38 /* OrdersCollectionViewCell.swift in Sources */,
@@ -623,6 +642,7 @@
 				DDB2307A21318DD800FE4F38 /* ViPayManager.xcdatamodeld in Sources */,
 				DDEA5F752164E932004DE089 /* WaitingPickUpViewController.swift in Sources */,
 				DDB230AF213193E900FE4F38 /* MyConstraints.swift in Sources */,
+				DDBE55EF21691AD2001F4ECE /* BusinessChatTableViewCell.swift in Sources */,
 				DDDA666A213BD7FB00486003 /* SelectSizeViewController.swift in Sources */,
 				DDDA666C213C45BD00486003 /* SelectSizeCollectionViewCell.swift in Sources */,
 				DDB230AB2131910A00FE4F38 /* Extensions.swift in Sources */,

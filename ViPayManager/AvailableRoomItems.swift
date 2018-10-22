@@ -12,8 +12,7 @@ import UIKit
 
 class AvailableRoomItems: UIView {
     
-   
-    
+
     fileprivate let identifier = "identifier"
     var itemsArray = [AttachmentItems]()
 

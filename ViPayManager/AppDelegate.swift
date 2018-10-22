@@ -27,17 +27,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        
-//        UINavigationBar.appearance().barTintColor = .white
-//        UINavigationBar.appearance().tintColor = defaultAppColor
-//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont(name: FontNames.OpenSansBold, size: 14)!]
-//        UINavigationBar.appearance().isTranslucent = false
+
         
         UITabBar.appearance().tintColor = RGB.sharedInstance.requiredColor(r: 51, g: 34, b: 211, alpha: 1.0)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: FontNames.OpenSansSemiBold, size: 8)!], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: FontNames.OpenSansSemiBold, size: 8)!], for: .selected)
         
         Network.sharedInstance.initParse()
+        PFUser.logOut()
+        
         
         if PFUser.current() == nil {
             window?.rootViewController = UINavigationController(rootViewController: LandingPageViewController())

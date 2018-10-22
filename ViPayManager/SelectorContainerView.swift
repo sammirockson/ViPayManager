@@ -51,7 +51,7 @@ class SelectorContainerView: UIView {
     
     fileprivate let identifier = "identifier"
     
-    var itemsArray = ["Shop", "Restaurant" , "Housing", "Car Rentals","Hotel", "Tickets", "Service"]
+    var itemsArray = ["Shop", "Restaurant" , "Housing", "Car Rentals","Hotel", "Tickets"]
     
     override init(frame: CGRect) {
         super.init(frame: frame)

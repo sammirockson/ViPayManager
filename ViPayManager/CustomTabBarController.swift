@@ -28,6 +28,14 @@ class CustomTabBarController: UITabBarController {
         waitingVC.tabBarItem.selectedImage = UIImage(named: "stopwatchSelected")
         waitingVC.tabBarItem.image = UIImage(named: "stopWatchUnselected")
         waitingVC.tabBarItem.tag = 1
+        
+        let chatsVC = ChatsTableViewController()
+        chatsVC.view.backgroundColor = UIColor.groupTableViewBackground
+        let chatsNav = UINavigationController(rootViewController: chatsVC)
+        chatsVC.tabBarItem.title = "Chats"
+        chatsVC.tabBarItem.selectedImage = #imageLiteral(resourceName: "HomeSelected")
+        chatsVC.tabBarItem.image = #imageLiteral(resourceName: "HomeUnselected")
+        chatsVC.tabBarItem.tag = 1
 
         let shoppingVC = ShopViewController()
         let shoppingNav = UINavigationController(rootViewController: shoppingVC)
@@ -36,16 +44,8 @@ class CustomTabBarController: UITabBarController {
         shoppingVC.tabBarItem.selectedImage = #imageLiteral(resourceName: "shopSelected")
 
 
-        let settingsVC = UIViewController()
-        settingsVC.view.backgroundColor = UIColor.groupTableViewBackground
-        let settingsNav = UINavigationController(rootViewController: settingsVC)
-        settingsVC.tabBarItem.title = "Settings"
-        settingsVC.tabBarItem.selectedImage = #imageLiteral(resourceName: "HomeSelected")
-        settingsVC.tabBarItem.image = #imageLiteral(resourceName: "HomeUnselected")
-        settingsVC.tabBarItem.tag = 1
         
-        
-        viewControllers = [homeNav,waitingNav,shoppingNav,settingsNav]
+        viewControllers = [homeNav,waitingNav,chatsNav,shoppingNav]
         
         
         

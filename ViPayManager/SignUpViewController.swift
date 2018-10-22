@@ -21,7 +21,6 @@ enum BusinessType: Int {
     case housing
     case carRentals
     case hotel
-    case service
 }
 
 class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate , CLLocationManagerDelegate{

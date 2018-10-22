@@ -23,6 +23,8 @@ class ProductsImagesContainerView: UIView, UICollectionViewDelegate, UICollectio
     }()
     
     var motherVC: AddProductsViewController?
+    var restoVC: RestaurantsFoodsViewController?
+    
     var arrayOfImages = [UIImage]()
     
     private let identifier = "identifier"
@@ -33,7 +35,7 @@ class ProductsImagesContainerView: UIView, UICollectionViewDelegate, UICollectio
         setUpViews()
         
         collectionView.register(AddProductsImagesViewCell.self, forCellWithReuseIdentifier: identifier)
-        arrayOfImages.append(#imageLiteral(resourceName: "backgrounGradientImage"))
+        arrayOfImages.append(UIImage(named: "addFile")!)
         
     }
     
@@ -46,17 +48,12 @@ class ProductsImagesContainerView: UIView, UICollectionViewDelegate, UICollectio
     }
     func imagePicker(_ picker: OpalImagePickerController, didFinishPickingImages images: [UIImage]) {
         if images.count > 0 {
-            
             self.arrayOfImages.removeAll(keepingCapacity: true)
             self.arrayOfImages = images
-          
         }
-        
-        self.motherVC?.dismiss(animated: true, completion: {
+        picker.dismiss(animated: true, completion: {
             if self.arrayOfImages.count > 0 {
-                
                 self.collectionView.reloadData()
-
             }
         })
 
@@ -81,7 +78,7 @@ class ProductsImagesContainerView: UIView, UICollectionViewDelegate, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! AddProductsImagesViewCell
-        cell.backgroundColor = .red
+        cell.backgroundColor = .white
         cell.layer.cornerRadius = 8
         cell.clipsToBounds = true
         
@@ -99,6 +96,10 @@ class ProductsImagesContainerView: UIView, UICollectionViewDelegate, UICollectio
         let imagePicker = OpalImagePickerController()
         imagePicker.imagePickerDelegate = self
         imagePicker.maximumSelectionsAllowed = 4
-        motherVC?.present(imagePicker, animated: true, completion: nil)
+        if self.restoVC != nil {
+            restoVC?.present(imagePicker, animated: true, completion: nil)
+        }else{
+            motherVC?.present(imagePicker, animated: true, completion: nil)
+        }
     }
 }

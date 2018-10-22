@@ -285,9 +285,9 @@ class AddHouseViewController: UIViewController, UITextFieldDelegate, CLLocationM
         
         let itemsArray: [AttachmentItems] = {
             let one = AttachmentItems.init(iconImage: UIImage(named: "kitchen")!, title: "Kitchen")
-            let two = AttachmentItems.init(iconImage: UIImage(named: "bathtub")!, title: "Bathtub")
+            let two = AttachmentItems.init(iconImage: UIImage(named: "wifi")!, title: "WiFi")
             let three = AttachmentItems.init(iconImage: UIImage(named: "closet")!, title: "Closet")
-            let four = AttachmentItems.init(iconImage: UIImage(named: "couch")!, title: "Furnished")
+            let four = AttachmentItems.init(iconImage: UIImage(named: "couch")!, title: "Couch")
             let five = AttachmentItems.init(iconImage: UIImage(named: "TV")!, title: "TV")
             let six = AttachmentItems.init(iconImage: UIImage(named: "fridge")!, title: "Fridge")
             let seven = AttachmentItems.init(iconImage: UIImage(named: "laundry")!, title: "Laundry")
